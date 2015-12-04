@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E4358611C124F4300E95895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4358601C124F4300E95895 /* AppDelegate.swift */; };
+		6E4358631C124F4300E95895 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4358621C124F4300E95895 /* ViewController.swift */; };
+		6E4358661C124F4300E95895 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E4358641C124F4300E95895 /* Main.storyboard */; };
+		6E4358681C124F4300E95895 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4358671C124F4300E95895 /* Assets.xcassets */; };
+		6E43586B1C124F4300E95895 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E4358691C124F4300E95895 /* LaunchScreen.storyboard */; };
+		6E4358761C124F4300E95895 /* GrapevineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4358751C124F4300E95895 /* GrapevineTests.swift */; };
+		6E4358811C124F4300E95895 /* GrapevineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4358801C124F4300E95895 /* GrapevineUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E4358721C124F4300E95895 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E4358551C124F4300E95895 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E43585C1C124F4300E95895;
+			remoteInfo = Grapevine;
+		};
+		6E43587D1C124F4300E95895 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E4358551C124F4300E95895 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E43585C1C124F4300E95895;
+			remoteInfo = Grapevine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6E43585D1C124F4300E95895 /* Grapevine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapevine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E4358601C124F4300E95895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6E4358621C124F4300E95895 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E4358651C124F4300E95895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6E4358671C124F4300E95895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6E43586A1C124F4300E95895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6E43586C1C124F4300E95895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E4358711C124F4300E95895 /* GrapevineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrapevineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E4358751C124F4300E95895 /* GrapevineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrapevineTests.swift; sourceTree = "<group>"; };
+		6E4358771C124F4300E95895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E43587C1C124F4300E95895 /* GrapevineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrapevineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E4358801C124F4300E95895 /* GrapevineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrapevineUITests.swift; sourceTree = "<group>"; };
+		6E4358821C124F4300E95895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E43585A1C124F4300E95895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E43586E1C124F4300E95895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E4358791C124F4300E95895 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E4358541C124F4300E95895 = {
+			isa = PBXGroup;
+			children = (
+				6E43585F1C124F4300E95895 /* Grapevine */,
+				6E4358741C124F4300E95895 /* GrapevineTests */,
+				6E43587F1C124F4300E95895 /* GrapevineUITests */,
+				6E43585E1C124F4300E95895 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E43585E1C124F4300E95895 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E43585D1C124F4300E95895 /* Grapevine.app */,
+				6E4358711C124F4300E95895 /* GrapevineTests.xctest */,
+				6E43587C1C124F4300E95895 /* GrapevineUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E43585F1C124F4300E95895 /* Grapevine */ = {
+			isa = PBXGroup;
+			children = (
+				6E4358601C124F4300E95895 /* AppDelegate.swift */,
+				6E4358621C124F4300E95895 /* ViewController.swift */,
+				6E4358641C124F4300E95895 /* Main.storyboard */,
+				6E4358671C124F4300E95895 /* Assets.xcassets */,
+				6E4358691C124F4300E95895 /* LaunchScreen.storyboard */,
+				6E43586C1C124F4300E95895 /* Info.plist */,
+			);
+			path = Grapevine;
+			sourceTree = "<group>";
+		};
+		6E4358741C124F4300E95895 /* GrapevineTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E4358751C124F4300E95895 /* GrapevineTests.swift */,
+				6E4358771C124F4300E95895 /* Info.plist */,
+			);
+			path = GrapevineTests;
+			sourceTree = "<group>";
+		};
+		6E43587F1C124F4300E95895 /* GrapevineUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6E4358801C124F4300E95895 /* GrapevineUITests.swift */,
+				6E4358821C124F4300E95895 /* Info.plist */,
+			);
+			path = GrapevineUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E43585C1C124F4300E95895 /* Grapevine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E4358851C124F4300E95895 /* Build configuration list for PBXNativeTarget "Grapevine" */;
+			buildPhases = (
+				6E4358591C124F4300E95895 /* Sources */,
+				6E43585A1C124F4300E95895 /* Frameworks */,
+				6E43585B1C124F4300E95895 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Grapevine;
+			productName = Grapevine;
+			productReference = 6E43585D1C124F4300E95895 /* Grapevine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E4358701C124F4300E95895 /* GrapevineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E4358881C124F4300E95895 /* Build configuration list for PBXNativeTarget "GrapevineTests" */;
+			buildPhases = (
+				6E43586D1C124F4300E95895 /* Sources */,
+				6E43586E1C124F4300E95895 /* Frameworks */,
+				6E43586F1C124F4300E95895 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E4358731C124F4300E95895 /* PBXTargetDependency */,
+			);
+			name = GrapevineTests;
+			productName = GrapevineTests;
+			productReference = 6E4358711C124F4300E95895 /* GrapevineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6E43587B1C124F4300E95895 /* GrapevineUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E43588B1C124F4300E95895 /* Build configuration list for PBXNativeTarget "GrapevineUITests" */;
+			buildPhases = (
+				6E4358781C124F4300E95895 /* Sources */,
+				6E4358791C124F4300E95895 /* Frameworks */,
+				6E43587A1C124F4300E95895 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E43587E1C124F4300E95895 /* PBXTargetDependency */,
+			);
+			name = GrapevineUITests;
+			productName = GrapevineUITests;
+			productReference = 6E43587C1C124F4300E95895 /* GrapevineUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E4358551C124F4300E95895 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Jenny Yang";
+				TargetAttributes = {
+					6E43585C1C124F4300E95895 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 7C5NKZRN5Y;
+					};
+					6E4358701C124F4300E95895 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 7C5NKZRN5Y;
+						TestTargetID = 6E43585C1C124F4300E95895;
+					};
+					6E43587B1C124F4300E95895 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 7C5NKZRN5Y;
+						TestTargetID = 6E43585C1C124F4300E95895;
+					};
+				};
+			};
+			buildConfigurationList = 6E4358581C124F4300E95895 /* Build configuration list for PBXProject "Grapevine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6E4358541C124F4300E95895;
+			productRefGroup = 6E43585E1C124F4300E95895 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E43585C1C124F4300E95895 /* Grapevine */,
+				6E4358701C124F4300E95895 /* GrapevineTests */,
+				6E43587B1C124F4300E95895 /* GrapevineUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E43585B1C124F4300E95895 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E43586B1C124F4300E95895 /* LaunchScreen.storyboard in Resources */,
+				6E4358681C124F4300E95895 /* Assets.xcassets in Resources */,
+				6E4358661C124F4300E95895 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E43586F1C124F4300E95895 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E43587A1C124F4300E95895 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E4358591C124F4300E95895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E4358631C124F4300E95895 /* ViewController.swift in Sources */,
+				6E4358611C124F4300E95895 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E43586D1C124F4300E95895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E4358761C124F4300E95895 /* GrapevineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E4358781C124F4300E95895 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E4358811C124F4300E95895 /* GrapevineUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E4358731C124F4300E95895 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E43585C1C124F4300E95895 /* Grapevine */;
+			targetProxy = 6E4358721C124F4300E95895 /* PBXContainerItemProxy */;
+		};
+		6E43587E1C124F4300E95895 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E43585C1C124F4300E95895 /* Grapevine */;
+			targetProxy = 6E43587D1C124F4300E95895 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6E4358641C124F4300E95895 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E4358651C124F4300E95895 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6E4358691C124F4300E95895 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E43586A1C124F4300E95895 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E4358831C124F4300E95895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6E4358841C124F4300E95895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E4358861C124F4300E95895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Grapevine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hyy.Grapevine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6E4358871C124F4300E95895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Grapevine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hyy.Grapevine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6E4358891C124F4300E95895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GrapevineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hyy.GrapevineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grapevine.app/Grapevine";
+			};
+			name = Debug;
+		};
+		6E43588A1C124F4300E95895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GrapevineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hyy.GrapevineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grapevine.app/Grapevine";
+			};
+			name = Release;
+		};
+		6E43588C1C124F4300E95895 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GrapevineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hyy.GrapevineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Grapevine;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		6E43588D1C124F4300E95895 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GrapevineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hyy.GrapevineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Grapevine;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E4358581C124F4300E95895 /* Build configuration list for PBXProject "Grapevine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E4358831C124F4300E95895 /* Debug */,
+				6E4358841C124F4300E95895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E4358851C124F4300E95895 /* Build configuration list for PBXNativeTarget "Grapevine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E4358861C124F4300E95895 /* Debug */,
+				6E4358871C124F4300E95895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6E4358881C124F4300E95895 /* Build configuration list for PBXNativeTarget "GrapevineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E4358891C124F4300E95895 /* Debug */,
+				6E43588A1C124F4300E95895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6E43588B1C124F4300E95895 /* Build configuration list for PBXNativeTarget "GrapevineUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E43588C1C124F4300E95895 /* Debug */,
+				6E43588D1C124F4300E95895 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E4358551C124F4300E95895 /* Project object */;
+}
