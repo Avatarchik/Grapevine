@@ -14,6 +14,7 @@
 		6E43586B1C124F4300E95895 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E4358691C124F4300E95895 /* LaunchScreen.storyboard */; };
 		6E4358761C124F4300E95895 /* GrapevineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4358751C124F4300E95895 /* GrapevineTests.swift */; };
 		6E4358811C124F4300E95895 /* GrapevineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4358801C124F4300E95895 /* GrapevineUITests.swift */; };
+		C6F1D89550A250CB0EBF0CB5 /* Pods_Grapevine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2175E875D9977E4C8D0228 /* Pods_Grapevine.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01F43994A9D3263BBC8D1F26 /* Pods-Grapevine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Grapevine/Pods-Grapevine.debug.xcconfig"; sourceTree = "<group>"; };
+		4C2175E875D9977E4C8D0228 /* Pods_Grapevine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grapevine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E43585D1C124F4300E95895 /* Grapevine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapevine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4358601C124F4300E95895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E4358621C124F4300E95895 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,8 @@
 		6E43587C1C124F4300E95895 /* GrapevineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrapevineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4358801C124F4300E95895 /* GrapevineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrapevineUITests.swift; sourceTree = "<group>"; };
 		6E4358821C124F4300E95895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EDF2D221C13A7FE0018D742 /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		BE5237227EC3AD1E4AF318BB /* Pods-Grapevine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Grapevine/Pods-Grapevine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6F1D89550A250CB0EBF0CB5 /* Pods_Grapevine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,8 @@
 				6E4358741C124F4300E95895 /* GrapevineTests */,
 				6E43587F1C124F4300E95895 /* GrapevineUITests */,
 				6E43585E1C124F4300E95895 /* Products */,
+				92B4581C1173491F4305037C /* Pods */,
+				932010EF0076E5C0E4225214 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				6E4358601C124F4300E95895 /* AppDelegate.swift */,
+				6EDF2D221C13A7FE0018D742 /* Bridge.h */,
 				6E4358621C124F4300E95895 /* ViewController.swift */,
 				6E4358641C124F4300E95895 /* Main.storyboard */,
 				6E4358671C124F4300E95895 /* Assets.xcassets */,
@@ -125,6 +134,23 @@
 			path = GrapevineUITests;
 			sourceTree = "<group>";
 		};
+		92B4581C1173491F4305037C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01F43994A9D3263BBC8D1F26 /* Pods-Grapevine.debug.xcconfig */,
+				BE5237227EC3AD1E4AF318BB /* Pods-Grapevine.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		932010EF0076E5C0E4225214 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C2175E875D9977E4C8D0228 /* Pods_Grapevine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E4358851C124F4300E95895 /* Build configuration list for PBXNativeTarget "Grapevine" */;
 			buildPhases = (
+				C99349F86AB0209DD288F080 /* Check Pods Manifest.lock */,
 				6E4358591C124F4300E95895 /* Sources */,
 				6E43585A1C124F4300E95895 /* Frameworks */,
 				6E43585B1C124F4300E95895 /* Resources */,
+				7A21FB224E305589304B2079 /* Embed Pods Frameworks */,
+				5377C3872065893610A3237D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +282,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5377C3872065893610A3237D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Grapevine/Pods-Grapevine-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A21FB224E305589304B2079 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Grapevine/Pods-Grapevine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C99349F86AB0209DD288F080 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6E4358591C124F4300E95895 /* Sources */ = {
@@ -400,23 +477,27 @@
 		};
 		6E4358861C124F4300E95895 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01F43994A9D3263BBC8D1F26 /* Pods-Grapevine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Grapevine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hyy.Grapevine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Grapevine/Bridge.h;
 			};
 			name = Debug;
 		};
 		6E4358871C124F4300E95895 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE5237227EC3AD1E4AF318BB /* Pods-Grapevine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Grapevine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hyy.Grapevine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Grapevine/Bridge.h;
 			};
 			name = Release;
 		};
@@ -487,6 +568,7 @@
 				6E4358871C124F4300E95895 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E4358881C124F4300E95895 /* Build configuration list for PBXNativeTarget "GrapevineTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +577,7 @@
 				6E43588A1C124F4300E95895 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E43588B1C124F4300E95895 /* Build configuration list for PBXNativeTarget "GrapevineUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +586,7 @@
 				6E43588D1C124F4300E95895 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
