@@ -19,7 +19,9 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Hide password input
+        passwordField.secureTextEntry = true
+        confirmPasswordField.secureTextEntry = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,8 +51,17 @@ class RegisterViewController: UIViewController {
         newUser.password = password
         newUser.setValue(name, forKey: "name")
         
-        newUser.signUpInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
-            print("New user has been created.")
+        newUser.signUpInBackgroundWithBlock({
+            (success: Bool, error: NSError?) -> Void in
+            // Successfully created a new User
+            if (error == nil) {
+                self.performSegueWithIdentifier("goToUserSwipeView", sender: sender)
+                return
+            }
+            // Failed to create a new User
+            else {
+    
+            }
         })
     }
 

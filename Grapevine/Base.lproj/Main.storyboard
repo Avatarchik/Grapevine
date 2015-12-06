@@ -34,6 +34,9 @@
                                 <rect key="frame" x="164" y="355" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OMg-WR-mst"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcE-sh-SVS">
                                 <rect key="frame" x="154" y="553" width="67" height="30"/>
@@ -64,8 +67,8 @@
                     <connections>
                         <outlet property="emailField" destination="Tn3-s9-pSS" id="Tpe-wb-oSY"/>
                         <outlet property="passwordField" destination="H0E-1p-K6M" id="Qko-My-yxb"/>
-                        <segue destination="mfR-tI-Mpw" kind="show" identifier="goToRegistrationPage" id="Umi-lY-DO1"/>
-                        <segue destination="xoI-1e-rAF" kind="presentation" id="fJy-kb-pQL"/>
+                        <segue destination="mfR-tI-Mpw" kind="show" identifier="goToRegistrationView" id="Umi-lY-DO1"/>
+                        <segue destination="xoI-1e-rAF" kind="presentation" identifier="goToUserSwipeView" id="fJy-kb-pQL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

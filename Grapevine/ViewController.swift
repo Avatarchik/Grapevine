@@ -16,13 +16,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        let testObject = PFObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("Object has been saved.")
-        }
+
+        // Hide password input
+        passwordField.secureTextEntry = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,8 +26,28 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func loginUser(sender: AnyObject) {
+        let username = emailField.text!
+        let password = passwordField.text!
+        
+        PFUser.logInWithUsernameInBackground(username, password: password, block:{
+            (user, error) -> Void in
+            // Login SUCESS
+            if (user != nil) {
+                self.performSegueWithIdentifier("goToUserSwipeView", sender: self)
+            }
+            // Login FAIL
+            else {
+                let alertController : UIAlertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(defaultAction)
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        })
+    }
+    
     @IBAction func goToRegistrationPage(sender: AnyObject) {
-        self.performSegueWithIdentifier("goToRegistrationPage", sender: self)
+        self.performSegueWithIdentifier("goToRegistrationView", sender: self)
     }
 }
 
