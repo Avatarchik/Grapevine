@@ -55,7 +55,6 @@ class RegisterViewController: UIViewController {
             (success: Bool, error: NSError?) -> Void in
             // Successfully created a new User
             if (error == nil) {
-                print("success with registration!")
                 self.performSegueWithIdentifier("goToUserSwipeView", sender: sender)
             }
             // Failed to create a new User
