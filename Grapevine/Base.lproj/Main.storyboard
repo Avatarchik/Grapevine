@@ -68,14 +68,14 @@
                         <outlet property="emailField" destination="Tn3-s9-pSS" id="Tpe-wb-oSY"/>
                         <outlet property="passwordField" destination="H0E-1p-K6M" id="Qko-My-yxb"/>
                         <segue destination="mfR-tI-Mpw" kind="show" identifier="goToRegistrationView" id="Umi-lY-DO1"/>
-                        <segue destination="xoI-1e-rAF" kind="presentation" identifier="goToUserSwipeView" id="fJy-kb-pQL"/>
+                        <segue destination="h5z-qT-tMo" kind="presentation" identifier="goToUserSwipeView" id="fJy-kb-pQL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="230.5" y="231.5"/>
         </scene>
-        <!--Swipe View Controller-->
+        <!--Grapevine-->
         <scene sceneID="sQP-0x-7tH">
             <objects>
                 <viewController id="xoI-1e-rAF" customClass="SwipeViewController" customModule="Grapevine" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,11 +98,15 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Grapevine" id="qMS-Cj-fIu">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="OH2-71-Dws"/>
+                        <barButtonItem key="rightBarButtonItem" title="Bucket" id="AnE-pG-PxX"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wL-c3-j9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="482.5" y="1096.5"/>
+            <point key="canvasLocation" x="1005.5" y="1096.5"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Jjs-Ui-rNI">
@@ -165,15 +169,34 @@
                         <outlet property="emailField" destination="sXD-Cn-bjt" id="tMO-Pq-9OS"/>
                         <outlet property="nameField" destination="kvg-Ct-BK3" id="AX9-Ji-6Ec"/>
                         <outlet property="passwordField" destination="GJe-aA-sFy" id="a4L-FZ-N4D"/>
-                        <segue destination="xoI-1e-rAF" kind="presentation" identifier="goToUserSwipeView" id="4K6-1F-zV7"/>
+                        <segue destination="h5z-qT-tMo" kind="presentation" identifier="goToUserSwipeView" id="4K6-1F-zV7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVl-mS-nFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="732.5" y="231.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qvJ-T3-hsc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h5z-qT-tMo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eCK-4H-dNe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xoI-1e-rAF" kind="relationship" relationship="rootViewController" id="EP7-BF-r1H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K17-Ry-rAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482.5" y="1096.5"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4K6-1F-zV7"/>
+        <segue reference="fJy-kb-pQL"/>
     </inferredMetricsTieBreakers>
 </document>
