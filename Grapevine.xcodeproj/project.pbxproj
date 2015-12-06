@@ -14,6 +14,8 @@
 		6E43586B1C124F4300E95895 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E4358691C124F4300E95895 /* LaunchScreen.storyboard */; };
 		6E4358761C124F4300E95895 /* GrapevineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4358751C124F4300E95895 /* GrapevineTests.swift */; };
 		6E4358811C124F4300E95895 /* GrapevineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4358801C124F4300E95895 /* GrapevineUITests.swift */; };
+		6EDF2D241C13AE960018D742 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF2D231C13AE960018D742 /* RegisterViewController.swift */; };
+		6EDF2D261C13B23C0018D742 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF2D251C13B23C0018D742 /* SwipeViewController.swift */; };
 		C6F1D89550A250CB0EBF0CB5 /* Pods_Grapevine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2175E875D9977E4C8D0228 /* Pods_Grapevine.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		6E4358801C124F4300E95895 /* GrapevineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrapevineUITests.swift; sourceTree = "<group>"; };
 		6E4358821C124F4300E95895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EDF2D221C13A7FE0018D742 /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		6EDF2D231C13AE960018D742 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		6EDF2D251C13B23C0018D742 /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		BE5237227EC3AD1E4AF318BB /* Pods-Grapevine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Grapevine/Pods-Grapevine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,9 +113,11 @@
 				6EDF2D221C13A7FE0018D742 /* Bridge.h */,
 				6E4358621C124F4300E95895 /* ViewController.swift */,
 				6E4358641C124F4300E95895 /* Main.storyboard */,
+				6EDF2D231C13AE960018D742 /* RegisterViewController.swift */,
 				6E4358671C124F4300E95895 /* Assets.xcassets */,
 				6E4358691C124F4300E95895 /* LaunchScreen.storyboard */,
 				6E43586C1C124F4300E95895 /* Info.plist */,
+				6EDF2D251C13B23C0018D742 /* SwipeViewController.swift */,
 			);
 			path = Grapevine;
 			sourceTree = "<group>";
@@ -336,8 +342,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EDF2D241C13AE960018D742 /* RegisterViewController.swift in Sources */,
 				6E4358631C124F4300E95895 /* ViewController.swift in Sources */,
 				6E4358611C124F4300E95895 /* AppDelegate.swift in Sources */,
+				6EDF2D261C13B23C0018D742 /* SwipeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
