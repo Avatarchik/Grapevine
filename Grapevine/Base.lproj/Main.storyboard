@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wL-c3-j9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230.5" y="1074.5"/>
+            <point key="canvasLocation" x="482.5" y="1096.5"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Jjs-Ui-rNI">
@@ -165,6 +165,7 @@
                         <outlet property="emailField" destination="sXD-Cn-bjt" id="tMO-Pq-9OS"/>
                         <outlet property="nameField" destination="kvg-Ct-BK3" id="AX9-Ji-6Ec"/>
                         <outlet property="passwordField" destination="GJe-aA-sFy" id="a4L-FZ-N4D"/>
+                        <segue destination="xoI-1e-rAF" kind="presentation" identifier="goToUserSwipeView" id="4K6-1F-zV7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVl-mS-nFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,4 +173,7 @@
             <point key="canvasLocation" x="732.5" y="231.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4K6-1F-zV7"/>
+    </inferredMetricsTieBreakers>
 </document>
