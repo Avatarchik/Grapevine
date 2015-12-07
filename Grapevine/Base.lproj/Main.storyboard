@@ -86,9 +86,41 @@
                     <view key="view" contentMode="scaleToFill" id="cwT-dn-IRk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Grapevine" id="qMS-Cj-fIu">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="OH2-71-Dws">
+                            <connections>
+                                <segue destination="k95-Ph-U1t" kind="show" id="bDG-BF-XNX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Bucket" id="AnE-pG-PxX"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7wL-c3-j9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.5" y="1096.5"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="M32-QC-faH">
+            <objects>
+                <viewController id="k95-Ph-U1t" customClass="ProfileViewController" customModule="Grapevine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dKl-g0-qMi"/>
+                        <viewControllerLayoutGuide type="bottom" id="xnT-BV-ssO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TDL-ll-jkG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Mq-6g-aLg">
-                                <rect key="frame" x="166" y="179" width="42" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndA-ZL-Fm1" customClass="PFImageView">
+                                <rect key="frame" x="112" y="118" width="150" height="150"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlg-OY-q9I">
+                                <rect key="frame" x="98" y="306" width="178" height="31"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,15 +130,17 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Grapevine" id="qMS-Cj-fIu">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="OH2-71-Dws"/>
-                        <barButtonItem key="rightBarButtonItem" title="Bucket" id="AnE-pG-PxX"/>
-                    </navigationItem>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="Rlg-OY-q9I" id="oc7-ih-bDz"/>
+                        <outlet property="userPhoto" destination="ndA-ZL-Fm1" id="1dT-lm-v1k"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7wL-c3-j9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VNG-V5-11p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005.5" y="1096.5"/>
+            <point key="canvasLocation" x="1005.5" y="1925.5"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Jjs-Ui-rNI">

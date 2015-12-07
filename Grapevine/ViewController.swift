@@ -31,9 +31,9 @@ class ViewController: UIViewController {
         let password = passwordField.text!
         
         PFUser.logInWithUsernameInBackground(username, password: password, block:{
-            (user, error) -> Void in
+            (user: PFUser?, error: NSError?) -> Void in
             // Login SUCESS
-            if (user != nil) {
+            if (user != nil && PFUser.currentUser() != nil) {
                 self.performSegueWithIdentifier("goToUserSwipeView", sender: self)
             }
             // Login FAIL

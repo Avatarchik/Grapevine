@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import Parse
 
 class SwipeViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var draggableBackground: DraggableViewBackground = DraggableViewBackground(frame: self.view.frame)
+        let draggableBackground: DraggableViewBackground = DraggableViewBackground(frame: self.view.frame)
         self.view.addSubview(draggableBackground)
+        
     }
 
     override func didReceiveMemoryWarning() {

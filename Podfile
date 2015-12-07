@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'Grapevine' do
   pod 'Parse'
+  pod 'ParseUI'
 end
 
 target 'GrapevineTests' do

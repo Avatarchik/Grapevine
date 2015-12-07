@@ -86,8 +86,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Grapevine/Bolts.framework"
   install_framework "Pods-Grapevine/Parse.framework"
+  install_framework "Pods-Grapevine/ParseUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Grapevine/Bolts.framework"
   install_framework "Pods-Grapevine/Parse.framework"
+  install_framework "Pods-Grapevine/ParseUI.framework"
 fi

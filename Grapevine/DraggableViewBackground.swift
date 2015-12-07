@@ -58,7 +58,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     }
     
     func createDraggableViewWithDataAtIndex(index: NSInteger) -> DraggableView {
-        var draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT))
+        let draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT))
         draggableView.information.text = exampleCardLabels[index]
         draggableView.delegate = self
         return draggableView
@@ -68,7 +68,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         if exampleCardLabels.count > 0 {
             let numLoadedCardsCap = exampleCardLabels.count > MAX_BUFFER_SIZE ? MAX_BUFFER_SIZE : exampleCardLabels.count
             for var i = 0; i < exampleCardLabels.count; i++ {
-                var newCard: DraggableView = self.createDraggableViewWithDataAtIndex(i)
+                let newCard: DraggableView = self.createDraggableViewWithDataAtIndex(i)
                 allCards.append(newCard)
                 if i < numLoadedCardsCap {
                     loadedCards.append(newCard)
@@ -110,7 +110,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         if loadedCards.count <= 0 {
             return
         }
-        var dragView: DraggableView = loadedCards[0]
+        let dragView: DraggableView = loadedCards[0]
         dragView.overlayView.setMode(GGOverlayViewMode.GGOverlayViewModeRight)
         UIView.animateWithDuration(0.2, animations: {
             () -> Void in
@@ -123,7 +123,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         if loadedCards.count <= 0 {
             return
         }
-        var dragView: DraggableView = loadedCards[0]
+        let dragView: DraggableView = loadedCards[0]
         dragView.overlayView.setMode(GGOverlayViewMode.GGOverlayViewModeLeft)
         UIView.animateWithDuration(0.2, animations: {
             () -> Void in
