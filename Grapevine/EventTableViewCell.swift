@@ -12,6 +12,7 @@ class EventTableViewCell: UITableViewCell {
 
     @IBOutlet var eventNameLabel: UILabel!
     @IBOutlet var eventDateLabel: UILabel!
+    @IBOutlet var eventTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

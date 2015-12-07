@@ -29,4 +29,22 @@ class Event {
         description = ""
 //        eventPhoto = PFFile
     }
+    
+    func convertEventDateFormatter(date: NSDate) -> String {
+        //   CURRENT: 2015-12-07 03:40:00 +0000
+        // CONVERTED: Dec 7
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MMM d"
+        let dateString = formatter.stringFromDate(date)
+        return dateString
+    }
+    
+    func convertEventTimeFormatter(date: NSDate) -> String {
+        //   CURRENT: 2015-12-07 03:40:00 +0000
+        // CONVERTED: 3:40am
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "h:ma"
+        let timeString = formatter.stringFromDate(date).lowercaseString
+        return timeString
+    }
 }

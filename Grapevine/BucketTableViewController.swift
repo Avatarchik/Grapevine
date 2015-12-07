@@ -65,9 +65,16 @@ class BucketTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as? EventTableViewCell ?? EventTableViewCell()
+        
         let event = eventsArray[indexPath.row] as Event
         cell.eventNameLabel.text = event.eventName
-        cell.eventDateLabel.text = event.start.description
+
+        let dateString = event.convertEventDateFormatter(event.start)
+        cell.eventDateLabel.text = dateString
+        
+        let timeString = event.convertEventTimeFormatter(event.start)
+        cell.eventTimeLabel.text = timeString
+        
         return cell
     }
 
