@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Hide password input
         passwordField.secureTextEntry = true
     }
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func loginUser(sender: AnyObject) {
+    @IBAction func loginAction(sender: AnyObject) {
         let username = emailField.text!
         let password = passwordField.text!
         

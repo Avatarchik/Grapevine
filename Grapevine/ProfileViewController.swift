@@ -52,14 +52,21 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func logoutAction(sender: AnyObject) {
+        let logoutAlert = UIAlertController(title: "Are you sure?", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        logoutAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (action: UIAlertAction!) in
+            // Cancel logout action
+        }))
+        
+        logoutAlert.addAction(UIAlertAction(title: "Logout", style: .Default, handler: {
+            (action: UIAlertAction!) in
+            PFUser.logOut()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        
+        presentViewController(logoutAlert, animated: true, completion: nil)
     }
-    */
 
 }
