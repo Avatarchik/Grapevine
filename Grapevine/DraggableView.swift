@@ -29,7 +29,9 @@ class DraggableView: UIView {
     var panGestureRecognizer: UIPanGestureRecognizer!
     var originPoint: CGPoint!
     var overlayView: OverlayView!
-    var information: UILabel!
+    var eventName: UILabel!
+    var eventDate: UILabel!
+    var eventStart: UILabel!
     var xFromCenter: Float!
     var yFromCenter: Float!
     
@@ -42,17 +44,29 @@ class DraggableView: UIView {
         
         self.setupView()
         
-        information = UILabel(frame: CGRectMake(0, 50, self.frame.size.width, 100))
-        information.text = "no info given"
-        information.textAlignment = NSTextAlignment.Center
-        information.textColor = UIColor.blackColor()
+        eventName = UILabel(frame: CGRectMake(0, 70, self.frame.size.width, 100))
+        eventName.text = "no event name given"
+        eventName.textAlignment = NSTextAlignment.Center
+        eventName.textColor = UIColor.blackColor()
+        
+        eventDate = UILabel(frame: CGRectMake(0, 90, self.frame.size.width, 100))
+        eventDate.text = "no event date given"
+        eventDate.textAlignment = NSTextAlignment.Center
+        eventDate.textColor = UIColor.blackColor()
+        
+        eventStart = UILabel(frame: CGRectMake(0, 110, self.frame.size.width, 100))
+        eventStart.text = "no event start time given"
+        eventStart.textAlignment = NSTextAlignment.Center
+        eventStart.textColor = UIColor.blackColor()
         
         self.backgroundColor = UIColor.whiteColor()
         
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "beingDragged:")
         
         self.addGestureRecognizer(panGestureRecognizer)
-        self.addSubview(information)
+        self.addSubview(eventName)
+        self.addSubview(eventDate)
+        self.addSubview(eventStart)
         
         overlayView = OverlayView(frame: CGRectMake(self.frame.size.width/2-100, 0, 100, 100))
         overlayView.alpha = 0

@@ -13,7 +13,7 @@ import Foundation
 import UIKit
 
 class DraggableViewBackground: UIView, DraggableViewDelegate {
-    var exampleCardLabels: [String]!
+    var eventCards: [[String]]!
     var allCards: [DraggableView]!
     
     let MAX_BUFFER_SIZE = 2
@@ -35,7 +35,9 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         super.init(frame: frame)
         super.layoutSubviews()
         self.setupView()
-        exampleCardLabels = ["first", "second", "third", "fourth", "last"]
+        eventCards = [["event 1", "event 1 date", "event 1 start"],
+                      ["event 2", "event 2 date", "event 2 start"],
+                      ["event 3", "event 3 date", "event 3 start"]]
         allCards = []
         loadedCards = []
         cardsLoadedIndex = 0
@@ -59,15 +61,17 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     
     func createDraggableViewWithDataAtIndex(index: NSInteger) -> DraggableView {
         let draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT))
-        draggableView.information.text = exampleCardLabels[index]
+        draggableView.eventName.text = eventCards[index][0]
+        draggableView.eventDate.text = eventCards[index][1]
+        draggableView.eventStart.text = eventCards[index][2]
         draggableView.delegate = self
         return draggableView
     }
     
     func loadCards() -> Void {
-        if exampleCardLabels.count > 0 {
-            let numLoadedCardsCap = exampleCardLabels.count > MAX_BUFFER_SIZE ? MAX_BUFFER_SIZE : exampleCardLabels.count
-            for var i = 0; i < exampleCardLabels.count; i++ {
+        if eventCards.count > 0 {
+            let numLoadedCardsCap = eventCards.count > MAX_BUFFER_SIZE ? MAX_BUFFER_SIZE : eventCards.count
+            for var i = 0; i < eventCards.count; i++ {
                 let newCard: DraggableView = self.createDraggableViewWithDataAtIndex(i)
                 allCards.append(newCard)
                 if i < numLoadedCardsCap {
