@@ -111,7 +111,7 @@
             </objects>
             <point key="canvasLocation" x="1005.5" y="1096.5"/>
         </scene>
-        <!--Grapevine-->
+        <!--Bucket-->
         <scene sceneID="pz2-Ja-hiB">
             <objects>
                 <tableViewController id="fGd-FE-xnH" customClass="BucketTableViewController" customModule="Grapevine" customModuleProvider="target" sceneMemberID="viewController">
@@ -163,7 +163,7 @@
                                     <outlet property="eventDateLabel" destination="6G3-3W-IzE" id="YTN-Ji-PCm"/>
                                     <outlet property="eventNameLabel" destination="S9u-Pt-zPD" id="Ahb-sv-G6v"/>
                                     <outlet property="eventTimeLabel" destination="XoW-M4-bLa" id="JFn-za-n2y"/>
-                                    <segue destination="ltW-bR-ZVl" kind="show" id="XIm-zH-UpA"/>
+                                    <segue destination="ltW-bR-ZVl" kind="show" identifier="goToEventDetails" id="XIm-zH-UpA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -172,14 +172,14 @@
                             <outlet property="delegate" destination="fGd-FE-xnH" id="zhv-SG-YTr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Grapevine" id="JMD-1p-bMc"/>
+                    <navigationItem key="navigationItem" title="Bucket" id="JMD-1p-bMc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WL6-Ga-k1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1503.5" y="1096.5"/>
         </scene>
-        <!--Grapevine-->
+        <!--Event Details-->
         <scene sceneID="HU1-zD-tC5">
             <objects>
                 <viewController id="ltW-bR-ZVl" customClass="EventDetailViewController" customModule="Grapevine" customModuleProvider="target" sceneMemberID="viewController">
@@ -190,11 +190,63 @@
                     <view key="view" contentMode="scaleToFill" id="UWp-Y0-62K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qim-VD-r41">
+                                <rect key="frame" x="141" y="146" width="93" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hosted By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BO-Jd-crf">
+                                <rect key="frame" x="147" y="204" width="80" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADf-eA-5wZ">
+                                <rect key="frame" x="143" y="378" width="88" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIQ-2C-p2M">
+                                <rect key="frame" x="154" y="261" width="66" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spe-rj-u6N">
+                                <rect key="frame" x="132" y="481" width="111" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Add to Calendar"/>
+                                <connections>
+                                    <action selector="addEventToCal:" destination="ltW-bR-ZVl" eventType="touchUpInside" id="k3j-OD-1A5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06U-V9-1JW">
+                                <rect key="frame" x="147" y="314" width="80" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Grapevine" id="AnE-Yx-iOT"/>
+                    <navigationItem key="navigationItem" title="Event Details" id="AnE-Yx-iOT"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="ADf-eA-5wZ" id="hoq-yE-HsO"/>
+                        <outlet property="eventNameLabel" destination="qim-VD-r41" id="kOo-hu-oQ5"/>
+                        <outlet property="hostedByLabel" destination="4BO-Jd-crf" id="TgY-KN-6zr"/>
+                        <outlet property="locationLabel" destination="wIQ-2C-p2M" id="v3D-3V-d72"/>
+                        <outlet property="startTimeLabel" destination="06U-V9-1JW" id="Izd-VZ-HVt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="re1-fq-b41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
