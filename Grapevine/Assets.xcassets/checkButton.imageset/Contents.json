@@ -2,13 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "Oval 3 + Rectangle 11.png"
+      "filename" : "checkbutton.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "Oval 3 + Rectangle 11-1.png"
+      "filename" : "checkbutton-1.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",

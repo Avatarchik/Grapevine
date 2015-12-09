@@ -92,16 +92,20 @@
                     <navigationItem key="navigationItem" title="Grapevine" id="qMS-Cj-fIu">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="OH2-71-Dws">
                             <connections>
-                                <segue destination="k95-Ph-U1t" kind="show" id="bDG-BF-XNX"/>
+                                <segue destination="k95-Ph-U1t" kind="show" identifier="goToSettingsView" id="bDG-BF-XNX"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Bucket" id="AnE-pG-PxX">
                             <connections>
-                                <segue destination="fGd-FE-xnH" kind="show" id="EDJ-Am-K3m"/>
+                                <segue destination="fGd-FE-xnH" kind="show" identifier="goToBucketView" id="EDJ-Am-K3m"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bucketButton" destination="AnE-pG-PxX" id="2PS-jv-maI"/>
+                        <outlet property="settingsButton" destination="OH2-71-Dws" id="wCs-fG-Q6w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wL-c3-j9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -333,6 +337,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fJy-kb-pQL"/>
+        <segue reference="4K6-1F-zV7"/>
     </inferredMetricsTieBreakers>
 </document>
