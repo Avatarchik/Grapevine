@@ -68,5 +68,11 @@ class ProfileViewController: UIViewController {
         
         presentViewController(logoutAlert, animated: true, completion: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
+    }
 
 }

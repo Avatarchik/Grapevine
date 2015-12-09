@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E26654B1C189E4F00DF1CBF /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E26654A1C189E4F00DF1CBF /* AddEventViewController.swift */; };
 		6E4358611C124F4300E95895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4358601C124F4300E95895 /* AppDelegate.swift */; };
 		6E4358631C124F4300E95895 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4358621C124F4300E95895 /* ViewController.swift */; };
 		6E4358661C124F4300E95895 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E4358641C124F4300E95895 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		01F43994A9D3263BBC8D1F26 /* Pods-Grapevine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grapevine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Grapevine/Pods-Grapevine.debug.xcconfig"; sourceTree = "<group>"; };
 		4C2175E875D9977E4C8D0228 /* Pods_Grapevine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grapevine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E26654A1C189E4F00DF1CBF /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		6E43585D1C124F4300E95895 /* Grapevine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grapevine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4358601C124F4300E95895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E4358621C124F4300E95895 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				6EDF2D331C152AE40018D742 /* BucketTableViewController.swift */,
 				6EDF2D371C1553E00018D742 /* EventTableViewCell.swift */,
 				6E4358641C124F4300E95895 /* Main.storyboard */,
+				6E26654A1C189E4F00DF1CBF /* AddEventViewController.swift */,
 				6EDF2D351C152BB50018D742 /* EventDetailViewController.swift */,
 				6EDF2D2D1C14D51E0018D742 /* ProfileViewController.swift */,
 				6EDF2D2F1C1525910018D742 /* Event.swift */,
@@ -367,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EDF2D381C1553E00018D742 /* EventTableViewCell.swift in Sources */,
+				6E26654B1C189E4F00DF1CBF /* AddEventViewController.swift in Sources */,
 				6EDF2D2A1C14D1580018D742 /* DraggableViewBackground.swift in Sources */,
 				6EDF2D341C152AE40018D742 /* BucketTableViewController.swift in Sources */,
 				6EDF2D301C1525910018D742 /* Event.swift in Sources */,
