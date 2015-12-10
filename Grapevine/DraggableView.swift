@@ -32,6 +32,7 @@ class DraggableView: UIView {
     var originPoint: CGPoint!
     var overlayView: OverlayView!
     var eventPhotoView: UIImageView!
+    var eventID: String = ""
     var eventName: UILabel!
     var eventDate: UILabel!
     var eventStart: UILabel!

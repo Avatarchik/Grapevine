@@ -103,6 +103,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     func createDraggableViewWithDataAtIndex(index: NSInteger) -> DraggableView {
         let draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT))
 //        print("before", eventsArray[index].eventPhoto)
+        draggableView.eventID = eventsArray[index].objectID!
         draggableView.eventName.text = eventsArray[index].eventName
         draggableView.eventDate.text = eventDateFormatter.stringFromDate(eventsArray[index].start!)
         draggableView.eventStart.text = eventTimeFormatter.stringFromDate(eventsArray[index].start!).lowercaseString
@@ -137,6 +138,16 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     }
     
     func cardSwipedLeft(card: UIView) -> Void {
+        let userEventObject = PFObject(className: "UserEvent")
+        userEventObject["category"] = "discard"
+        userEventObject["eventID"] = loadedCards[0].eventID
+        userEventObject["in_calendar"] = false
+        userEventObject["userID"] = PFUser.currentUser()?.objectId
+        
+        userEventObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("New user event object has been saved in user's discard array.")
+        }
+        
         loadedCards.removeAtIndex(0)
         
         if cardsLoadedIndex < allCards.count {
@@ -147,6 +158,16 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     }
     
     func cardSwipedRight(card: UIView) -> Void {
+        let userEventObject = PFObject(className: "UserEvent")
+        userEventObject["category"] = "bucket"
+        userEventObject["eventID"] = loadedCards[0].eventID
+        userEventObject["in_calendar"] = false
+        userEventObject["userID"] = PFUser.currentUser()?.objectId
+        
+        userEventObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("New user event object has been saved in user's bucket array.")
+        }
+        
         loadedCards.removeAtIndex(0)
         
         if cardsLoadedIndex < allCards.count {
