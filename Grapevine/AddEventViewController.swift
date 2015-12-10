@@ -9,7 +9,10 @@
 import UIKit
 import Parse
 
-class AddEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UITextFieldDelegate {
+    
+    @IBOutlet var scrollView: UIScrollView!
+    var activeField: UITextField?
     
     @IBOutlet weak var eventName: UITextField!
     @IBOutlet weak var hostedBy: UITextField!
@@ -17,15 +20,22 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var endTextField: UITextField!
     @IBOutlet weak var location: UITextField!
-    @IBOutlet weak var anythingElse: UITextField!
+    @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var addEventPhotoButton: UIButton!
     @IBOutlet weak var createNewEventButton: UIButton!
     
     let imagePicker = UIImagePickerController()
     var dateFormatter = NSDateFormatter()
     
+    let datePickerView = UIDatePicker()
+    
+
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.contentSize = CGSize(width: 375.0, height: 672.0)
         
         self.view.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
         addEventPhotoButton.titleLabel?.textColor = UIColor(red: 126.0/255.0, green: 67.0/255.0, blue: 150.0/255.5, alpha: 1.0)
@@ -34,11 +44,93 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
         
         imagePicker.delegate = self
         dateFormatter.dateFormat = "MMM dd, yyyy h:mm a"
+        
+        eventName.delegate = self
+        hostedBy.delegate = self
+        startTextField.delegate = self
+        endTextField.delegate = self
+        location.delegate = self
+        descriptionField.delegate = self
+        
+        datePickerView.datePickerMode = UIDatePickerMode.DateAndTime
+        startTextField.inputView = datePickerView
+        endTextField.inputView = datePickerView
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
+        registerForKeyboardNotifications()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func registerForKeyboardNotifications()
+    {
+        //Adding notifies on keyboard appearing
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillBeHidden:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    
+    func deregisterFromKeyboardNotifications()
+    {
+        //Removing notifies on keyboard appearing
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWasShown(notification: NSNotification)
+    {
+        //Need to calculate keyboard exact size due to Apple suggestions
+        self.scrollView.scrollEnabled = true
+        let info : NSDictionary = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+        var aRect : CGRect = self.view.frame
+        aRect.size.height -= keyboardSize!.height
+        if let activeFieldPresent = activeField
+        {
+            if (!CGRectContainsPoint(aRect, activeField!.frame.origin))
+            {
+                self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
+            }
+        }
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification)
+    {
+        //Once keyboard disappears, restore original positions
+        let info : NSDictionary = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        self.view.endEditing(true)
+        self.scrollView.scrollEnabled = false
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField)
+    {
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField)
+    {
+        activeField = nil
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     @IBAction func addImageButtonTapped() {
@@ -49,22 +141,10 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func startTextFieldEditing(sender: UITextField) {
-        let datePickerView:UIDatePicker = UIDatePicker()
-        
-        datePickerView.datePickerMode = UIDatePickerMode.DateAndTime
-        
-        sender.inputView = datePickerView
-        
         datePickerView.addTarget(self, action: Selector("startPickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     @IBAction func endTextFieldEditing(sender: UITextField) {
-        let datePickerView:UIDatePicker = UIDatePicker()
-        
-        datePickerView.datePickerMode = UIDatePickerMode.DateAndTime
-        
-        sender.inputView = datePickerView
-        
         datePickerView.addTarget(self, action: Selector("endPickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
@@ -76,7 +156,7 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
         eventObject["EventName"] = eventName.text
         eventObject["hostedBy"] = hostedBy.text
         eventObject["location"] = location.text
-        eventObject["description"] = anythingElse.text
+        eventObject["description"] = descriptionField.text
         
         // saving the photo file
         let photo = imageView.image!
