@@ -254,6 +254,10 @@
                                     <action selector="addEventToCal:" destination="ltW-bR-ZVl" eventType="touchUpInside" id="k3j-OD-1A5"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bgz-4Z-Vdo">
+                                <rect key="frame" x="61" y="429" width="240" height="128"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -267,6 +271,7 @@
                         <outlet property="addToCalButton" destination="Spe-rj-u6N" id="547-T3-SSV"/>
                         <outlet property="descriptionLabel" destination="ADf-eA-5wZ" id="hoq-yE-HsO"/>
                         <outlet property="eventNameLabel" destination="qim-VD-r41" id="kOo-hu-oQ5"/>
+                        <outlet property="eventPhotoView" destination="Bgz-4Z-Vdo" id="t8a-IJ-Pbw"/>
                         <outlet property="hostedByLabel" destination="4BO-Jd-crf" id="TgY-KN-6zr"/>
                         <outlet property="locationLabel" destination="wIQ-2C-p2M" id="v3D-3V-d72"/>
                         <outlet property="startTimeLabel" destination="06U-V9-1JW" id="Izd-VZ-HVt"/>

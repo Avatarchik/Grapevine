@@ -18,6 +18,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var addToCalButton: UIButton!
+    @IBOutlet weak var eventPhotoView: UIImageView!
     
     var savedEventId : String = ""
     var arrayIndex : Int = 0
@@ -48,6 +49,11 @@ class EventDetailViewController: UIViewController {
             }
             if let description = self.descriptionLabel {
                 description.text = detail.description
+            }
+            if let eventPhoto = self.eventPhotoView {
+                eventPhotoView.image = detail.eventPhoto
+                print (eventPhoto)
+                print (eventPhotoView)
             }
         }
     }

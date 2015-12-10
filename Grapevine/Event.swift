@@ -17,7 +17,7 @@ class Event {
     var end: NSDate
     var location: String
     var description: String
-//    var eventPhoto: PFFile
+    var eventPhoto: UIImage
     
     init() {
         objectID = ""
@@ -27,7 +27,7 @@ class Event {
         end = NSDate()
         location = ""
         description = ""
-//        eventPhoto = PFFile
+        eventPhoto = UIImage()
     }
     
     func convertEventDateFormatter(date: NSDate) -> String {
