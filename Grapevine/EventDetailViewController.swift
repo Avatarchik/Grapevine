@@ -17,6 +17,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var addToCalButton: UIButton!
     
     var savedEventId : String = ""
     var arrayIndex : Int = 0
@@ -55,6 +56,9 @@ class EventDetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.configureView()
+        self.view.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
+        addToCalButton.layer.cornerRadius = 5
+        addToCalButton.backgroundColor = UIColor(red: 126.0/255.0, green: 67.0/255.0, blue: 150.0/255.5, alpha: 1.0)
         // sets the display date format for the dateformatter, used for all dates with the stringFromDate method
         dateFormatter.dateFormat = "MMM dd, yyyy h:mm a"
         

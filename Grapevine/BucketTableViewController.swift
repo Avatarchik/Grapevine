@@ -16,6 +16,8 @@ class BucketTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
+        self.tableView.separatorColor = UIColor(red: 37.0/255.0, green: 37.0/255.0, blue: 37.0/255.5, alpha: 1.0)
         getAllEvents()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -75,6 +77,7 @@ class BucketTableViewController: UITableViewController {
         let timeString = event.convertEventTimeFormatter(event.start)
         cell.eventTimeLabel.text = timeString
         
+        cell.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
         return cell
     }
 

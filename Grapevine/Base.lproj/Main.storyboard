@@ -207,6 +207,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qim-VD-r41">
+                                <rect key="frame" x="139" y="146" width="97" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hosted By" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BO-Jd-crf">
                                 <rect key="frame" x="147" y="204" width="80" height="21"/>
                                 <animations/>
@@ -228,15 +235,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spe-rj-u6N">
-                                <rect key="frame" x="132" y="481" width="117" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                <state key="normal" title="Add to Calendar"/>
-                                <connections>
-                                    <action selector="addEventToCal:" destination="ltW-bR-ZVl" eventType="touchUpInside" id="k3j-OD-1A5"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06U-V9-1JW">
                                 <rect key="frame" x="147" y="314" width="80" height="21"/>
                                 <animations/>
@@ -244,20 +242,29 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qim-VD-r41">
-                                <rect key="frame" x="139" y="146" width="97" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spe-rj-u6N">
+                                <rect key="frame" x="43" y="617" width="289" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <state key="normal" title="Add to Calendar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addEventToCal:" destination="ltW-bR-ZVl" eventType="touchUpInside" id="k3j-OD-1A5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Spe-rj-u6N" firstAttribute="centerX" secondItem="UWp-Y0-62K" secondAttribute="centerX" id="e9O-xQ-lKX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Event Details" id="AnE-Yx-iOT"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="addToCalButton" destination="Spe-rj-u6N" id="547-T3-SSV"/>
                         <outlet property="descriptionLabel" destination="ADf-eA-5wZ" id="hoq-yE-HsO"/>
                         <outlet property="eventNameLabel" destination="qim-VD-r41" id="kOo-hu-oQ5"/>
                         <outlet property="hostedByLabel" destination="4BO-Jd-crf" id="TgY-KN-6zr"/>
@@ -285,14 +292,7 @@
                                 <rect key="frame" x="112" y="118" width="150" height="150"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlg-OY-q9I">
-                                <rect key="frame" x="98" y="306" width="178" height="31"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVN-wG-quH">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVN-wG-quH">
                                 <rect key="frame" x="43" y="585" width="289" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
@@ -305,31 +305,41 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK0-gW-RJI">
-                                <rect key="frame" x="43" y="389" width="289" height="30"/>
+                                <rect key="frame" x="43" y="401" width="289" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <state key="normal" title="Add Event">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="iqt-Yj-bpw" kind="show" id="vsq-7R-JjD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZ0-J6-Bj3">
-                                <rect key="frame" x="43" y="426" width="289" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmV-iM-JX8">
+                                <rect key="frame" x="43" y="438" width="289" height="32"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <state key="normal" title="My Events">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlg-OY-q9I">
+                                <rect key="frame" x="43" y="276" width="289" height="31"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cK0-gW-RJI" firstAttribute="centerX" secondItem="TDL-ll-jkG" secondAttribute="centerX" id="1Pp-5U-cc8"/>
+                            <constraint firstItem="Rlg-OY-q9I" firstAttribute="centerX" secondItem="TDL-ll-jkG" secondAttribute="centerX" id="Bd6-96-ZdI"/>
+                            <constraint firstItem="HmV-iM-JX8" firstAttribute="centerX" secondItem="TDL-ll-jkG" secondAttribute="centerX" id="SbR-nf-Dpe"/>
+                            <constraint firstItem="aVN-wG-quH" firstAttribute="centerX" secondItem="TDL-ll-jkG" secondAttribute="centerX" id="hR4-dE-5CP"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -337,9 +347,9 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="addEventButton" destination="cK0-gW-RJI" id="Mb9-It-fUO"/>
-                        <outlet property="logoutButton" destination="aVN-wG-quH" id="1cn-nI-gcL"/>
-                        <outlet property="myEventsButton" destination="BZ0-J6-Bj3" id="Uuf-gJ-Ifk"/>
+                        <outlet property="addEventButton" destination="cK0-gW-RJI" id="7BX-jp-CMz"/>
+                        <outlet property="logoutButton" destination="aVN-wG-quH" id="VBf-TA-CzD"/>
+                        <outlet property="myEventsButton" destination="HmV-iM-JX8" id="05c-KE-Ufg"/>
                         <outlet property="nameLabel" destination="Rlg-OY-q9I" id="oc7-ih-bDz"/>
                         <outlet property="userPhoto" destination="ndA-ZL-Fm1" id="1dT-lm-v1k"/>
                     </connections>
@@ -396,13 +406,16 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOP-2Z-Kqt">
-                                <rect key="frame" x="130" y="327" width="115" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCx-aT-7yu">
+                                <rect key="frame" x="43" y="585" width="289" height="30"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                <state key="normal" title="Add Event Photo"/>
+                                <state key="normal" title="Create New Event">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="addImageButtonTapped" destination="iqt-Yj-bpw" eventType="touchUpInside" id="YWp-CV-v5t"/>
+                                    <action selector="hostCreateEvent:" destination="iqt-Yj-bpw" eventType="touchUpInside" id="1IU-2h-KR0"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYt-QJ-JSi">
@@ -416,13 +429,15 @@
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCx-aT-7yu">
-                                <rect key="frame" x="125" y="585" width="125" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOP-2Z-Kqt">
+                                <rect key="frame" x="130" y="335" width="115" height="16"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                <state key="normal" title="Create New Event"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                <state key="normal" title="Add Event Photo">
+                                    <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="hostCreateEvent:" destination="iqt-Yj-bpw" eventType="touchUpInside" id="1IU-2h-KR0"/>
+                                    <action selector="addImageButtonTapped" destination="iqt-Yj-bpw" eventType="touchUpInside" id="YWp-CV-v5t"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -441,7 +456,9 @@
                     <navigationItem key="navigationItem" title="Add Event" id="EIo-cN-Jbq"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="addEventPhotoButton" destination="jOP-2Z-Kqt" id="vGE-g6-nvq"/>
                         <outlet property="anythingElse" destination="JMm-BE-lS4" id="iF4-o1-rmK"/>
+                        <outlet property="createNewEventButton" destination="HCx-aT-7yu" id="OZS-FZ-LRx"/>
                         <outlet property="endTextField" destination="DZp-xf-MP5" id="ddW-Bu-o51"/>
                         <outlet property="eventName" destination="gwg-Cg-Owc" id="6Yx-Lu-I3X"/>
                         <outlet property="hostedBy" destination="2mO-QT-nEr" id="3R6-3W-85x"/>

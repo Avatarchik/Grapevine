@@ -81,8 +81,8 @@ class DraggableView: UIView {
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.backgroundColor = UIColor(patternImage: image)        
-        self.layer.cornerRadius = 4;
-        self.layer.shadowRadius = 3;
+//        self.layer.cornerRadius = 4;
+//        self.layer.shadowRadius = 3;
         self.layer.shadowOpacity = 0.2;
         self.layer.shadowOffset = CGSizeMake(1, 1);
     }

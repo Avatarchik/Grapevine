@@ -17,13 +17,20 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var endTextField: UITextField!
     @IBOutlet weak var location: UITextField!
-    @IBOutlet weak var anythingElse: UITextField!  
+    @IBOutlet weak var anythingElse: UITextField!
+    @IBOutlet weak var addEventPhotoButton: UIButton!
+    @IBOutlet weak var createNewEventButton: UIButton!
     
     let imagePicker = UIImagePickerController()
     var dateFormatter = NSDateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
+        addEventPhotoButton.titleLabel?.textColor = UIColor(red: 126.0/255.0, green: 67.0/255.0, blue: 150.0/255.5, alpha: 1.0)
+        createNewEventButton.layer.cornerRadius = 5
+        createNewEventButton.backgroundColor = UIColor(red: 126.0/255.0, green: 67.0/255.0, blue: 150.0/255.5, alpha: 1.0)
         
         imagePicker.delegate = self
         dateFormatter.dateFormat = "MMM dd, yyyy h:mm a"
