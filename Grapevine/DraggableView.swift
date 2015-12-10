@@ -59,8 +59,6 @@ class DraggableView: UIView {
         eventStart.textAlignment = NSTextAlignment.Center
         eventStart.textColor = UIColor.blackColor()
         
-        self.backgroundColor = UIColor.whiteColor()
-        
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "beingDragged:")
         
         self.addGestureRecognizer(panGestureRecognizer)
@@ -68,7 +66,7 @@ class DraggableView: UIView {
         self.addSubview(eventDate)
         self.addSubview(eventStart)
         
-        overlayView = OverlayView(frame: CGRectMake(self.frame.size.width/2-100, 0, 100, 100))
+        overlayView = OverlayView(frame: CGRectMake(self.frame.size.width/2-100, self.frame.size.height/2, 100, 100))
         overlayView.alpha = 0
         self.addSubview(overlayView)
         
@@ -77,6 +75,12 @@ class DraggableView: UIView {
     }
     
     func setupView() -> Void {
+        // Set image for event card
+        UIGraphicsBeginImageContext(self.frame.size)
+        UIImage(named: "calendar_view")?.drawInRect(self.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.backgroundColor = UIColor(patternImage: image)        
         self.layer.cornerRadius = 4;
         self.layer.shadowRadius = 3;
         self.layer.shadowOpacity = 0.2;
