@@ -11,14 +11,25 @@ import Parse
 
 class RegisterViewController: UIViewController {
 
-    @IBOutlet var nameField: UITextField!
-    @IBOutlet var emailField: UITextField!
-    @IBOutlet var passwordField: UITextField!
-    @IBOutlet var confirmPasswordField: UITextField!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var confirmPasswordField: UITextField!
+    @IBOutlet weak var createUserButton: UIButton!
+    @IBOutlet weak var loginViewLabel: UILabel!
+    @IBOutlet weak var loginViewButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor(red: 231.0/255.0, green: 232.0/255.0, blue: 233.0/255.5, alpha: 1.0)
+        logoImageView.contentMode = .ScaleAspectFit
+        createUserButton.layer.cornerRadius = 5
+        createUserButton.backgroundColor = UIColor(red: 126.0/255.0, green: 67.0/255.0, blue: 150.0/255.5, alpha: 1.0)
+        loginViewLabel.textColor = UIColor(red: 83.0/255.0, green: 81.0/255.0, blue: 127.0/255.5, alpha: 1.0)
+        loginViewButton.titleLabel?.textColor = UIColor(red: 83.0/255.0, green: 81.0/255.0, blue: 127.0/255.5, alpha: 1.0)
+        
         // Hide password input
         passwordField.secureTextEntry = true
         confirmPasswordField.secureTextEntry = true
@@ -28,17 +39,6 @@ class RegisterViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func registerNewUser(sender: AnyObject) {
         let name = nameField.text!
@@ -62,6 +62,10 @@ class RegisterViewController: UIViewController {
     
             }
         })
+    }
+    
+    @IBAction func goToLoginViewController(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

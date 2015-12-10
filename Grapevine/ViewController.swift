@@ -11,11 +11,17 @@ import Parse
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        logoImageView.contentMode = .ScaleAspectFit
+        loginButton.layer.cornerRadius = 5
+        loginButton.backgroundColor = UIColor(red: 126.0/255.0, green: 67.0/255.0, blue: 150.0/255.5, alpha: 1.0)
         
         // Hide password input
         passwordField.secureTextEntry = true
