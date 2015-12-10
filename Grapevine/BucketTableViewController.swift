@@ -11,59 +11,80 @@ import Parse
 
 class BucketTableViewController: UITableViewController {
     
-    var eventsArray: [Event] = []
+    var bucketEventsArray: [Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
         self.tableView.separatorColor = UIColor(red: 37.0/255.0, green: 37.0/255.0, blue: 37.0/255.5, alpha: 1.0)
-        getAllEvents()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        getBucketEventsDataFromParse()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func getAllEvents() {
-        let query = PFQuery(className:"Event")
-        query.findObjectsInBackgroundWithBlock {
+    
+    // Retrieve all events from Parse that the current user expressed their interest to attend
+    func getBucketEventsDataFromParse() {
+        let bucketEventIDsQuery = PFQuery(className: "UserEvent")
+        bucketEventIDsQuery.whereKey("category", equalTo: "bucket")
+//        let user = PFUser.currentUser()?.objectId
+        let user = "cTbNUaHHRV"
+        bucketEventIDsQuery.whereKey("userID", equalTo: user)
+        
+        bucketEventIDsQuery.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) events in the bucket.")
+                // Do something with the found objects
                 if let objects = objects {
                     for object in objects {
-                        let newEvent = Event()
-                        newEvent.objectID = object.objectId!
-                        newEvent.eventName = object["EventName"] as? String
-                        newEvent.hostedBy = object["hostedBy"] as? String
-                        newEvent.location = object["location"] as? String
-                        newEvent.start = object["start"] as? NSDate
-                        newEvent.end = object["end"] as? NSDate
-                        newEvent.eventDescription = object["description"] as? String
-                        let imageFile = object["eventPhoto"] as! PFFile
-                        imageFile.getDataInBackgroundWithBlock {
-                            (imageData: NSData?, error: NSError?) -> Void in
-                            if error == nil {
-                                if let imageData = imageData {
-                                    let image = UIImage(data:imageData)
-                                    newEvent.eventPhoto = image!
-                                }
-                            }
-                        }
-                        
-                        self.eventsArray.append(newEvent)
+                        // add this objectID to the bucketEventIDsArray
+                        let id = object["eventID"] as! String
+                        self.getEventWithID(id)
                     }
-                    self.tableView.reloadData()
                 }
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+    }
+    
+    func getEventWithID(id: String) {
+        let getEventQuery = PFQuery(className: "Event")
+        getEventQuery.getObjectInBackgroundWithId(id) {
+            (object: PFObject?, error: NSError?) -> Void in
+            if error == nil && object != nil {
+                if let event = object {
+                    let newEvent = Event()
+                    newEvent.objectID = event.objectId!
+                    newEvent.objectID = event.objectId!
+                    newEvent.eventName = event["EventName"] as? String
+                    newEvent.location = event["location"] as? String
+                    newEvent.hostedBy = event["hostedBy"] as? String
+                    newEvent.start = event["start"] as? NSDate
+                    newEvent.end = event["end"] as? NSDate
+                    newEvent.eventDescription = event["description"] as? String
+                    let imageFile = event["eventPhoto"] as! PFFile
+                    imageFile.getDataInBackgroundWithBlock {
+                        (imageData: NSData?, error: NSError?) -> Void in
+                        if error == nil {
+                            if let imageData = imageData {
+                                let image = UIImage(data:imageData)
+                                newEvent.eventPhoto = image!
+                            }
+                        }
+                    }
+                    self.bucketEventsArray.append(newEvent)
+                }
+                self.tableView.reloadData()
+            } else {
+                print(error)
             }
         }
     }
@@ -77,13 +98,13 @@ class BucketTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return eventsArray.count
+        return bucketEventsArray.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as? EventTableViewCell ?? EventTableViewCell()
         
-        let event = eventsArray[indexPath.row] as Event
+        let event = bucketEventsArray[indexPath.row] as Event
         cell.eventNameLabel.text = event.eventName
 
         let dateString = event.convertEventDateFormatter(event.start!)
@@ -103,7 +124,7 @@ class BucketTableViewController: UITableViewController {
         
         if segue.identifier == "goToEventDetails" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let event = eventsArray[indexPath.row] as Event
+                let event = bucketEventsArray[indexPath.row] as Event
                 (segue.destinationViewController as! EventDetailViewController).detailItem = event
             }
         }

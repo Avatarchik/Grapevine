@@ -22,8 +22,6 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var addToCalButton: UIButton!
     
     var savedEventId : String = ""
-    var arrayIndex : Int = 0
-    var eventsArray: [Event] = []
 
     var eventDateFormatter = NSDateFormatter()
     var eventTimeFormatter = NSDateFormatter()
@@ -125,21 +123,4 @@ class EventDetailViewController: UIViewController {
         presentViewController(alertController, animated: true, completion: nil)
         
     }
-    
-//    func displayEvent() {
-//        if (arrayIndex < self.eventsArray.count) {
-//            eventNameLabel.text = self.eventsArray[arrayIndex].eventName
-//            hostedByLabel.text = self.eventsArray[arrayIndex].hostedBy
-//            startTimeLabel.text = dateFormatter.stringFromDate(self.eventsArray[arrayIndex].start)
-//            locationLabel.text = self.eventsArray[arrayIndex].location
-//            descriptionLabel.text = self.eventsArray[arrayIndex].description
-//        } else {
-//            let alertController = UIAlertController(title: "No more events to display", message: "There are no more events. Check back in a few hours for more!", preferredStyle: .Alert)
-//            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-//            alertController.addAction(defaultAction)
-//            
-//            presentViewController(alertController, animated: true, completion: nil)
-//        }
-//    }
-
 }

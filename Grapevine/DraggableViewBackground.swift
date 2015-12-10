@@ -47,22 +47,17 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         loadedCards = []
         cardsLoadedIndex = 0
         getAllEvents()
-//        eventCards = [["event 1", "event 1 date", "event 1 start"],
-//                      ["event 2", "event 2 date", "event 2 start"],
-//                      ["event 3", "event 3 date", "event 3 start"]]
 //        self.loadCards()
     }
     
     func setupView() -> Void {
         self.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
         
-//        xButton = UIButton(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2 + 50, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
         xButton = UIButton(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2 + 100, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
         xButton.setImage(UIImage(named: "xButton"), forState: UIControlState.Normal)
         xButton.addTarget(self, action: "swipeLeft", forControlEvents: UIControlEvents.TouchUpInside)
         
-//        checkButton = UIButton(frame: CGRectMake(self.frame.size.width/2 + CARD_WIDTH/2 - 100, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
-        checkButton = UIButton(frame: CGRectMake(self.frame.size.width/2 + CARD_WIDTH/2 - 150, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
+        checkButton = UIButton(frame: CGRectMake(self.frame.size.width/2 + CARD_WIDTH/2 - 160, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
         checkButton.setImage(UIImage(named: "checkButton"), forState: UIControlState.Normal)
         checkButton.addTarget(self, action: "swipeRight", forControlEvents: UIControlEvents.TouchUpInside)
         
@@ -107,10 +102,13 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     
     func createDraggableViewWithDataAtIndex(index: NSInteger) -> DraggableView {
         let draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT))
-        draggableView.eventPhotoView.image = eventsArray[index].eventPhoto
+//        print("before", eventsArray[index].eventPhoto)
         draggableView.eventName.text = eventsArray[index].eventName
         draggableView.eventDate.text = eventDateFormatter.stringFromDate(eventsArray[index].start!)
         draggableView.eventStart.text = eventTimeFormatter.stringFromDate(eventsArray[index].start!).lowercaseString
+        draggableView.eventPhotoView.sizeToFit()
+        draggableView.eventPhotoView.image = eventsArray[index].eventPhoto
+//        print(draggableView.eventPhotoView.image)
         draggableView.delegate = self
         return draggableView
     }
@@ -120,6 +118,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
             let numLoadedCardsCap = eventsArray.count > MAX_BUFFER_SIZE ? MAX_BUFFER_SIZE : eventsArray.count
             for var i = 0; i < eventsArray.count; i++ {
                 let newCard: DraggableView = self.createDraggableViewWithDataAtIndex(i)
+//                print("loadCards function here:", newCard.eventPhotoView)
                 allCards.append(newCard)
                 if i < numLoadedCardsCap {
                     loadedCards.append(newCard)

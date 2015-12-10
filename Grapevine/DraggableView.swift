@@ -47,28 +47,31 @@ class DraggableView: UIView {
         
         self.setupView()
         
-        eventPhotoView = UIImageView(frame: CGRectMake(0, 0, 100, 100))
+        eventPhotoView = UIImageView(frame: CGRectMake(0, 70, self.frame.size.width, self.frame.size.width))
         eventPhotoView.image = UIImage(named: "app_logo")
         
-        eventName = UILabel(frame: CGRectMake(0, 300, self.frame.size.width, 100))
+        eventName = UILabel(frame: CGRectMake(5, self.frame.size.height-90, self.frame.size.width, 100))
         eventName.text = "no event name given"
+        eventName.font = UIFont(name: "Futura", size: 17.0)
         eventName.textColor = UIColor.blackColor()
         
-        eventDate = UILabel(frame: CGRectMake(0, 320, self.frame.size.width, 100))
+        eventDate = UILabel(frame: CGRectMake(5, self.frame.size.height-75, self.frame.size.width, 100))
         eventDate.text = "no event date given"
+        eventDate.font = UIFont(name: "Futura", size: 12.0)
         eventDate.textColor = UIColor.blackColor()
         
-        eventStart = UILabel(frame: CGRectMake(0, 340, self.frame.size.width, 100))
+        eventStart = UILabel(frame: CGRectMake(5, self.frame.size.height-60, self.frame.size.width, 100))
         eventStart.text = "no event start time given"
+        eventStart.font = UIFont(name: "Futura", size: 12.0)
         eventStart.textColor = UIColor.blackColor()
         
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "beingDragged:")
         
         self.addGestureRecognizer(panGestureRecognizer)
-        self.addSubview(eventPhotoView)
         self.addSubview(eventName)
         self.addSubview(eventDate)
         self.addSubview(eventStart)
+        self.addSubview(eventPhotoView)
         
         overlayView = OverlayView(frame: CGRectMake(self.frame.size.width/2-100, self.frame.size.height/2, 100, 100))
         overlayView.alpha = 0
@@ -85,9 +88,7 @@ class DraggableView: UIView {
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.backgroundColor = UIColor(patternImage: image)        
-//        self.layer.cornerRadius = 4;
-//        self.layer.shadowRadius = 3;
-        self.layer.shadowOpacity = 0.2;
+        self.layer.shadowOpacity = 0.1;
         self.layer.shadowOffset = CGSizeMake(1, 1);
     }
     
