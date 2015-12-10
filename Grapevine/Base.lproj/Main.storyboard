@@ -293,22 +293,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVN-wG-quH">
-                                <rect key="frame" x="163" y="510" width="48" height="30"/>
+                                <rect key="frame" x="43" y="585" width="289" height="30"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logoutAction:" destination="k95-Ph-U1t" eventType="touchUpInside" id="QLK-Jy-fj9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK0-gW-RJI">
-                                <rect key="frame" x="150" y="422" width="75" height="30"/>
+                                <rect key="frame" x="43" y="389" width="289" height="30"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                <state key="normal" title="Add Event"/>
+                                <state key="normal" title="Add Event">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="iqt-Yj-bpw" kind="show" id="vsq-7R-JjD"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZ0-J6-Bj3">
+                                <rect key="frame" x="43" y="426" width="289" height="32"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <state key="normal" title="My Events">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <animations/>
@@ -322,6 +337,9 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="addEventButton" destination="cK0-gW-RJI" id="Mb9-It-fUO"/>
+                        <outlet property="logoutButton" destination="aVN-wG-quH" id="1cn-nI-gcL"/>
+                        <outlet property="myEventsButton" destination="BZ0-J6-Bj3" id="Uuf-gJ-Ifk"/>
                         <outlet property="nameLabel" destination="Rlg-OY-q9I" id="oc7-ih-bDz"/>
                         <outlet property="userPhoto" destination="ndA-ZL-Fm1" id="1dT-lm-v1k"/>
                     </connections>
@@ -560,6 +578,6 @@
         <image name="home_bg" width="3125" height="5563"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fJy-kb-pQL"/>
+        <segue reference="4K6-1F-zV7"/>
     </inferredMetricsTieBreakers>
 </document>

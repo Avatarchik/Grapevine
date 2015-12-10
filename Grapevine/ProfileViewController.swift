@@ -12,6 +12,9 @@ import ParseUI
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var addEventButton: UIButton!
+    @IBOutlet weak var myEventsButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var userPhoto: PFImageView!
     
@@ -19,6 +22,13 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         setUserNameAndPhoto()
+        
+        addEventButton.layer.cornerRadius = 5
+        addEventButton.backgroundColor = UIColor(red: 126.0/255.0, green: 67.0/255.0, blue: 150.0/255.5, alpha: 1.0)
+        myEventsButton.layer.cornerRadius = 5
+        myEventsButton.backgroundColor = UIColor(red: 126.0/255.0, green: 67.0/255.0, blue: 150.0/255.5, alpha: 1.0)
+        logoutButton.layer.cornerRadius = 5
+        logoutButton.backgroundColor = UIColor(red: 126.0/255.0, green: 67.0/255.0, blue: 150.0/255.5, alpha: 1.0)
     }
     
     override func didReceiveMemoryWarning() {
