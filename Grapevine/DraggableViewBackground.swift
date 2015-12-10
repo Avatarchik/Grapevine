@@ -81,18 +81,15 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
                         newEvent.objectID = object.objectId!
                         newEvent.eventName = object["EventName"] as? String
                         newEvent.start = object["start"] as? NSDate
-                        newEvent.location = object["location"] as? String
-//                        newEvent.eventPhoto = UIImage(object["eventPhoto"] as! NSData)
-                        
-                        let imageFile = object["eventPhoto"] as? PFFile
-                        imageFile!.getDataInBackgroundWithBlock {
+                        newEvent.location = object["location"] as? String                        
+                        let imageFile = object["eventPhoto"] as! PFFile
+                        imageFile.getDataInBackgroundWithBlock {
                             (imageData: NSData?, error: NSError?) -> Void in
                             if error == nil {
                                 if let imageData = imageData {
-                                    newEvent.eventPhotoData = UIImage(data: imageData)!
+                                    let image = UIImage(data:imageData)
+                                    newEvent.eventPhoto = image!
                                 }
-                            } else {
-                                print("No image retrieved")
                             }
                         }
                         self.eventsArray.append(newEvent)
@@ -110,8 +107,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     
     func createDraggableViewWithDataAtIndex(index: NSInteger) -> DraggableView {
         let draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT))
-        draggableView.eventPhotoView.image = eventsArray[index].eventPhotoData
-        print(draggableView.eventPhotoView)
+        draggableView.eventPhotoView.image = eventsArray[index].eventPhoto
         draggableView.eventName.text = eventsArray[index].eventName
         draggableView.eventDate.text = eventDateFormatter.stringFromDate(eventsArray[index].start!)
         draggableView.eventStart.text = eventTimeFormatter.stringFromDate(eventsArray[index].start!).lowercaseString

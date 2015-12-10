@@ -56,8 +56,8 @@ class EventDetailViewController: UIViewController {
             if let eventDescription = self.descriptionView {
                 eventDescription.text = detail.eventDescription
             }
-            if let eventPhotoData = self.eventPhotoView {
-                eventPhotoData.image = detail.eventPhotoData
+            if let eventPhoto = self.eventPhotoView {
+                eventPhotoView.image = detail.eventPhoto
             }
         }
     }

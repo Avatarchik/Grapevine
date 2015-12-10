@@ -46,7 +46,17 @@ class BucketTableViewController: UITableViewController {
                         newEvent.start = object["start"] as? NSDate
                         newEvent.end = object["end"] as? NSDate
                         newEvent.eventDescription = object["description"] as? String
-                        newEvent.eventPhotoData = object["eventPhoto"] as? UIImage
+                        let imageFile = object["eventPhoto"] as! PFFile
+                        imageFile.getDataInBackgroundWithBlock {
+                            (imageData: NSData?, error: NSError?) -> Void in
+                            if error == nil {
+                                if let imageData = imageData {
+                                    let image = UIImage(data:imageData)
+                                    newEvent.eventPhoto = image!
+                                }
+                            }
+                        }
+                        
                         self.eventsArray.append(newEvent)
                     }
                     self.tableView.reloadData()
