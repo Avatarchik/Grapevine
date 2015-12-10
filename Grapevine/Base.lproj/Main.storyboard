@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_bg" translatesAutoresizingMaskIntoConstraints="NO" id="N8L-vd-J6y">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="-1" y="0.0" width="376" height="667"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grapevine_logo" translatesAutoresizingMaskIntoConstraints="NO" id="dRe-FM-5Z3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="grapevine_logo" translatesAutoresizingMaskIntoConstraints="NO" id="dRe-FM-5Z3">
                                 <rect key="frame" x="-377" y="-86" width="1128" height="284"/>
                                 <animations/>
                             </imageView>
@@ -38,20 +38,20 @@
                                     <action selector="goToRegistrationPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9VA-kg-U5F"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Tn3-s9-pSS">
-                                <rect key="frame" x="58" y="247" width="259" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Tn3-s9-pSS">
+                                <rect key="frame" x="58" y="255" width="289" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="H0E-1p-K6M">
-                                <rect key="frame" x="58" y="296" width="259" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="H0E-1p-K6M">
+                                <rect key="frame" x="58" y="296" width="289" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oet-3h-b1Y">
-                                <rect key="frame" x="58" y="350" width="259" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oet-3h-b1Y">
+                                <rect key="frame" x="58" y="350" width="289" height="32"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
@@ -66,15 +66,14 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="N8L-vd-J6y" firstAttribute="top" secondItem="dRe-FM-5Z3" secondAttribute="bottom" constant="-198" id="2gw-aa-GcC"/>
                             <constraint firstItem="N8L-vd-J6y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5ea-dL-bT0"/>
-                            <constraint firstItem="oet-3h-b1Y" firstAttribute="top" secondItem="H0E-1p-K6M" secondAttribute="bottom" constant="24" id="76T-aP-pZO"/>
+                            <constraint firstItem="oet-3h-b1Y" firstAttribute="top" secondItem="H0E-1p-K6M" secondAttribute="bottom" constant="32" id="76T-aP-pZO"/>
                             <constraint firstItem="Tn3-s9-pSS" firstAttribute="width" secondItem="N8L-vd-J6y" secondAttribute="height" multiplier="259:667" id="7dI-Xc-VYG"/>
                             <constraint firstItem="N8L-vd-J6y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8rq-ub-5rp"/>
                             <constraint firstItem="N8L-vd-J6y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Jz6-C5-cBp"/>
                             <constraint firstItem="Tn3-s9-pSS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uwh-w4-FON"/>
                             <constraint firstItem="oet-3h-b1Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cT2-2v-T2j"/>
-                            <constraint firstItem="H0E-1p-K6M" firstAttribute="top" secondItem="Tn3-s9-pSS" secondAttribute="bottom" constant="19" id="cvb-Sw-yla"/>
+                            <constraint firstItem="H0E-1p-K6M" firstAttribute="top" secondItem="Tn3-s9-pSS" secondAttribute="bottom" constant="15" id="cvb-Sw-yla"/>
                             <constraint firstItem="H0E-1p-K6M" firstAttribute="width" secondItem="N8L-vd-J6y" secondAttribute="height" multiplier="259:667" id="eip-Db-xX4"/>
                             <constraint firstItem="QcE-sh-SVS" firstAttribute="bottom" secondItem="N8L-vd-J6y" secondAttribute="bottom" id="fsT-dM-nZO"/>
                             <constraint firstItem="N8L-vd-J6y" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="hVA-tF-Kuz"/>
@@ -82,7 +81,6 @@
                             <constraint firstItem="dRe-FM-5Z3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oaN-Qh-McS"/>
                             <constraint firstItem="oet-3h-b1Y" firstAttribute="width" secondItem="N8L-vd-J6y" secondAttribute="height" multiplier="259:667" id="pWS-0l-puA"/>
                             <constraint firstItem="QcE-sh-SVS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="teZ-ae-tyq"/>
-                            <constraint firstItem="Tn3-s9-pSS" firstAttribute="top" secondItem="dRe-FM-5Z3" secondAttribute="bottom" constant="49" id="zfY-1L-WMC"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -97,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230.5" y="231.5"/>
+            <point key="canvasLocation" x="226.5" y="218.5"/>
         </scene>
         <!--Grapevine-->
         <scene sceneID="sQP-0x-7tH">
@@ -503,75 +501,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kvg-Ct-BK3">
-                                <rect key="frame" x="43" y="241" width="289" height="30"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xSc-g5-EJ2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grapevine_logo" translatesAutoresizingMaskIntoConstraints="NO" id="3EJ-73-OoT">
+                                        <rect key="frame" x="37" y="136" width="300" height="76"/>
+                                        <animations/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kvg-Ct-BK3">
+                                        <rect key="frame" x="43" y="246" width="289" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sXD-Cn-bjt">
+                                        <rect key="frame" x="43" y="284" width="289" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GJe-aA-sFy">
+                                        <rect key="frame" x="43" y="322" width="289" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uI6-Ky-uSg">
+                                        <rect key="frame" x="43" y="360" width="289" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzI-Jr-zDD">
+                                        <rect key="frame" x="43" y="422" width="289" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                        <state key="normal" title="Start using Grapevine">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerNewUser:" destination="mfR-tI-Mpw" eventType="touchUpInside" id="Ch2-l3-GUW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brq-JH-fxe">
+                                        <rect key="frame" x="67" y="635" width="240" height="32"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="15"/>
+                                        <state key="normal" title="Already have an account?  Sign In.">
+                                            <color key="titleColor" red="0.25490196079999999" green="0.23529411759999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.25490196079999999" green="0.23529411759999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToLoginViewController:" destination="mfR-tI-Mpw" eventType="touchUpInside" id="NdR-Uo-kKe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sXD-Cn-bjt">
-                                <rect key="frame" x="43" y="293" width="289" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GJe-aA-sFy">
-                                <rect key="frame" x="43" y="346" width="289" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uI6-Ky-uSg">
-                                <rect key="frame" x="43" y="397" width="289" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzI-Jr-zDD">
-                                <rect key="frame" x="43" y="452" width="289" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                <state key="normal" title="Start using Grapevine">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="registerNewUser:" destination="mfR-tI-Mpw" eventType="touchUpInside" id="Ch2-l3-GUW"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grapevine_logo" translatesAutoresizingMaskIntoConstraints="NO" id="3EJ-73-OoT">
-                                <rect key="frame" x="37" y="121" width="300" height="76"/>
-                                <animations/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jT-Is-pTp">
-                                <rect key="frame" x="70" y="632" width="179" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                <color key="textColor" red="0.25490196078431371" green="0.23529411764705882" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brq-JH-fxe">
-                                <rect key="frame" x="252" y="626" width="61" height="32"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="15"/>
-                                <state key="normal" title="Sign In.">
-                                    <color key="titleColor" red="0.25490196079999999" green="0.23529411759999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.25490196079999999" green="0.23529411759999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="goToLoginViewController:" destination="mfR-tI-Mpw" eventType="touchUpInside" id="NdR-Uo-kKe"/>
-                                </connections>
-                            </button>
+                                <constraints>
+                                    <constraint firstItem="uI6-Ky-uSg" firstAttribute="top" secondItem="GJe-aA-sFy" secondAttribute="bottom" constant="15" id="AAA-xs-Jj5"/>
+                                    <constraint firstItem="sXD-Cn-bjt" firstAttribute="top" secondItem="kvg-Ct-BK3" secondAttribute="bottom" constant="15" id="QfF-q1-DjC"/>
+                                    <constraint firstItem="GJe-aA-sFy" firstAttribute="top" secondItem="sXD-Cn-bjt" secondAttribute="bottom" constant="15" id="etO-ck-7BK"/>
+                                    <constraint firstItem="pzI-Jr-zDD" firstAttribute="top" secondItem="uI6-Ky-uSg" secondAttribute="bottom" constant="32" id="fpP-dL-0sN"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GJe-aA-sFy" firstAttribute="centerX" secondItem="gIF-BJ-MOh" secondAttribute="centerX" id="Aic-I9-tZS"/>
-                            <constraint firstItem="pzI-Jr-zDD" firstAttribute="centerX" secondItem="gIF-BJ-MOh" secondAttribute="centerX" id="GtG-EY-aVq"/>
-                            <constraint firstItem="uI6-Ky-uSg" firstAttribute="centerX" secondItem="gIF-BJ-MOh" secondAttribute="centerX" id="JQQ-Sb-3PV"/>
-                            <constraint firstItem="sXD-Cn-bjt" firstAttribute="centerX" secondItem="gIF-BJ-MOh" secondAttribute="centerX" id="K08-Ub-hbs"/>
-                            <constraint firstItem="kvg-Ct-BK3" firstAttribute="centerX" secondItem="gIF-BJ-MOh" secondAttribute="centerX" id="j3u-vh-T6D"/>
-                            <constraint firstItem="Brq-JH-fxe" firstAttribute="leading" secondItem="0jT-Is-pTp" secondAttribute="trailing" constant="3" id="k0v-ff-gOV"/>
+                            <constraint firstItem="Brq-JH-fxe" firstAttribute="centerX" secondItem="gIF-BJ-MOh" secondAttribute="centerX" id="bSJ-RZ-kjc"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -580,10 +578,10 @@
                         <outlet property="createUserButton" destination="pzI-Jr-zDD" id="QHy-nx-B4n"/>
                         <outlet property="emailField" destination="sXD-Cn-bjt" id="tMO-Pq-9OS"/>
                         <outlet property="loginViewButton" destination="Brq-JH-fxe" id="7Ai-Qf-1m6"/>
-                        <outlet property="loginViewLabel" destination="0jT-Is-pTp" id="USi-SF-nnR"/>
                         <outlet property="logoImageView" destination="3EJ-73-OoT" id="nnl-UI-Wvx"/>
                         <outlet property="nameField" destination="kvg-Ct-BK3" id="AX9-Ji-6Ec"/>
                         <outlet property="passwordField" destination="GJe-aA-sFy" id="a4L-FZ-N4D"/>
+                        <outlet property="scrollView" destination="xSc-g5-EJ2" id="eDR-c1-TnQ"/>
                         <segue destination="h5z-qT-tMo" kind="presentation" identifier="goToUserSwipeView" id="4K6-1F-zV7"/>
                     </connections>
                 </viewController>
