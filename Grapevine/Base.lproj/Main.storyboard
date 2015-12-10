@@ -22,8 +22,8 @@
                                 <rect key="frame" x="-1" y="0.0" width="376" height="667"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="grapevine_logo" translatesAutoresizingMaskIntoConstraints="NO" id="dRe-FM-5Z3">
-                                <rect key="frame" x="-377" y="-86" width="1128" height="284"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grapevine_logo" translatesAutoresizingMaskIntoConstraints="NO" id="dRe-FM-5Z3">
+                                <rect key="frame" x="37" y="152" width="300" height="76"/>
                                 <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcE-sh-SVS">
@@ -39,19 +39,19 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Tn3-s9-pSS">
-                                <rect key="frame" x="58" y="255" width="289" height="30"/>
+                                <rect key="frame" x="43" y="253" width="289" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="H0E-1p-K6M">
-                                <rect key="frame" x="58" y="296" width="289" height="30"/>
+                                <rect key="frame" x="43" y="296" width="289" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oet-3h-b1Y">
-                                <rect key="frame" x="58" y="350" width="289" height="32"/>
+                                <rect key="frame" x="43" y="350" width="289" height="32"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
@@ -78,7 +78,6 @@
                             <constraint firstItem="QcE-sh-SVS" firstAttribute="bottom" secondItem="N8L-vd-J6y" secondAttribute="bottom" id="fsT-dM-nZO"/>
                             <constraint firstItem="N8L-vd-J6y" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="hVA-tF-Kuz"/>
                             <constraint firstItem="H0E-1p-K6M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lc2-RY-bTL"/>
-                            <constraint firstItem="dRe-FM-5Z3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oaN-Qh-McS"/>
                             <constraint firstItem="oet-3h-b1Y" firstAttribute="width" secondItem="N8L-vd-J6y" secondAttribute="height" multiplier="259:667" id="pWS-0l-puA"/>
                             <constraint firstItem="QcE-sh-SVS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="teZ-ae-tyq"/>
                         </constraints>
@@ -213,28 +212,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qim-VD-r41">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qim-VD-r41">
                                 <rect key="frame" x="20" y="447" width="335" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hosted By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BO-Jd-crf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hosted By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BO-Jd-crf">
                                 <rect key="frame" x="20" y="476" width="335" height="23"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIQ-2C-p2M">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIQ-2C-p2M">
                                 <rect key="frame" x="20" y="515" width="335" height="23"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3Q-zE-X3J">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3Q-zE-X3J">
                                 <rect key="frame" x="20" y="496" width="92" height="23"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
@@ -253,17 +252,17 @@
                                     <action selector="addEventToCal:" destination="ltW-bR-ZVl" eventType="touchUpInside" id="k3j-OD-1A5"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_bg" translatesAutoresizingMaskIntoConstraints="NO" id="lnP-Zz-Vv8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_bg" translatesAutoresizingMaskIntoConstraints="NO" id="lnP-Zz-Vv8">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <animations/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bt-Io-fds">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bt-Io-fds">
                                 <rect key="frame" x="20" y="537" width="335" height="72"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06U-V9-1JW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Start Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06U-V9-1JW">
                                 <rect key="frame" x="120" y="496" width="75" height="23"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
@@ -274,7 +273,14 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="qim-VD-r41" firstAttribute="top" secondItem="lnP-Zz-Vv8" secondAttribute="bottom" constant="8" id="CmP-yv-fK2"/>
+                            <constraint firstItem="I3Q-zE-X3J" firstAttribute="top" secondItem="4BO-Jd-crf" secondAttribute="bottom" constant="-3" id="Lao-Tj-n1f"/>
+                            <constraint firstItem="7bt-Io-fds" firstAttribute="top" secondItem="wIQ-2C-p2M" secondAttribute="bottom" constant="-1" id="P6x-qB-3GD"/>
+                            <constraint firstItem="lnP-Zz-Vv8" firstAttribute="centerX" secondItem="UWp-Y0-62K" secondAttribute="centerX" id="ccg-dO-Ivv"/>
                             <constraint firstItem="Spe-rj-u6N" firstAttribute="centerX" secondItem="UWp-Y0-62K" secondAttribute="centerX" id="e9O-xQ-lKX"/>
+                            <constraint firstItem="4BO-Jd-crf" firstAttribute="top" secondItem="qim-VD-r41" secondAttribute="bottom" constant="-1" id="fcT-EO-KIa"/>
+                            <constraint firstItem="wIQ-2C-p2M" firstAttribute="top" secondItem="I3Q-zE-X3J" secondAttribute="bottom" constant="-4" id="kbi-Jj-GK7"/>
+                            <constraint firstItem="06U-V9-1JW" firstAttribute="top" secondItem="4BO-Jd-crf" secondAttribute="bottom" constant="-3" id="r0B-iE-JL5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Event Details" id="AnE-Yx-iOT"/>
@@ -306,45 +312,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-2h-EzK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-2h-EzK">
                                 <rect key="frame" x="20" y="447" width="335" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hosted By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvW-sZ-Bsa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hosted By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvW-sZ-Bsa">
                                 <rect key="frame" x="20" y="476" width="335" height="23"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUO-Fk-24S">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUO-Fk-24S">
                                 <rect key="frame" x="20" y="515" width="335" height="23"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDF-F7-XVf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDF-F7-XVf">
                                 <rect key="frame" x="20" y="496" width="92" height="23"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_bg" translatesAutoresizingMaskIntoConstraints="NO" id="3gp-oH-ic9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="home_bg" translatesAutoresizingMaskIntoConstraints="NO" id="3gp-oH-ic9">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <animations/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iH6-7W-I32">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iH6-7W-I32">
                                 <rect key="frame" x="20" y="537" width="335" height="72"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzk-Mo-AZM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Start Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzk-Mo-AZM">
                                 <rect key="frame" x="120" y="496" width="75" height="23"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
@@ -354,6 +360,15 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DvW-sZ-Bsa" firstAttribute="top" secondItem="mnk-2h-EzK" secondAttribute="bottom" constant="-1" id="2Ji-6e-B6a"/>
+                            <constraint firstItem="FDF-F7-XVf" firstAttribute="top" secondItem="DvW-sZ-Bsa" secondAttribute="bottom" constant="-3" id="66d-oB-Z9A"/>
+                            <constraint firstItem="lzk-Mo-AZM" firstAttribute="top" secondItem="DvW-sZ-Bsa" secondAttribute="bottom" constant="-3" id="Biv-k1-Gde"/>
+                            <constraint firstItem="mnk-2h-EzK" firstAttribute="top" secondItem="3gp-oH-ic9" secondAttribute="bottom" constant="8" id="CN7-ev-9LM"/>
+                            <constraint firstItem="LUO-Fk-24S" firstAttribute="top" secondItem="DvW-sZ-Bsa" secondAttribute="bottom" constant="16" id="EMh-0y-uCq"/>
+                            <constraint firstItem="iH6-7W-I32" firstAttribute="top" secondItem="LUO-Fk-24S" secondAttribute="bottom" constant="-1" id="aCi-Vs-xzL"/>
+                            <constraint firstItem="3gp-oH-ic9" firstAttribute="centerX" secondItem="q8I-Xh-0Sv" secondAttribute="centerX" id="plZ-rN-tFv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Event Details" id="BhY-zg-Lg3"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -754,6 +769,6 @@
         <image name="home_bg" width="3125" height="5563"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4K6-1F-zV7"/>
+        <segue reference="fJy-kb-pQL"/>
     </inferredMetricsTieBreakers>
 </document>
