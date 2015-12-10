@@ -18,7 +18,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionView: UITextView!
     @IBOutlet weak var addToCalButton: UIButton!
     
     var savedEventId : String = ""
@@ -53,7 +53,7 @@ class EventDetailViewController: UIViewController {
             if let location = self.locationLabel {
                 location.text = detail.location
             }
-            if let eventDescription = self.descriptionLabel {
+            if let eventDescription = self.descriptionView {
                 eventDescription.text = detail.eventDescription
             }
             if let eventPhotoData = self.eventPhotoView {
@@ -71,7 +71,7 @@ class EventDetailViewController: UIViewController {
         
         eventDateFormatter.dateFormat = "MMMM d"
         eventTimeFormatter.dateFormat = "h:mma"
-        
+                
         eventPhotoView.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
         self.configureView()
         

@@ -27,7 +27,7 @@ class OverlayView: UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        imageView = UIImageView(image: UIImage(named: "noButton"))
+        imageView = UIImageView(image: UIImage(named: "nah"))
         self.addSubview(imageView)
     }
     
@@ -38,14 +38,15 @@ class OverlayView: UIView{
         _mode = mode
         
         if _mode == GGOverlayViewMode.GGOverlayViewModeLeft {
-            imageView.image = UIImage(named: "noButton")
+            imageView.image = UIImage(named: "nah")
+            imageView.frame = CGRectMake(50, 30, 156, 131)
         } else {
-            imageView.image = UIImage(named: "yesButton")
+            imageView.image = UIImage(named: "interested")
+            imageView.frame = CGRectMake(0, 30, 285, 187)
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        imageView.frame = CGRectMake(50, 50, 100, 100)
     }
 }
