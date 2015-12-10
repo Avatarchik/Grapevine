@@ -40,8 +40,13 @@ class BucketTableViewController: UITableViewController {
                     for object in objects {
                         let newEvent = Event()
                         newEvent.objectID = object.objectId!
-                        newEvent.eventName = object["EventName"] as! String
-                        newEvent.start = object["start"] as! NSDate
+                        newEvent.eventName = object["EventName"] as? String
+                        newEvent.hostedBy = object["hostedBy"] as? String
+                        newEvent.location = object["location"] as? String
+                        newEvent.start = object["start"] as? NSDate
+                        newEvent.end = object["end"] as? NSDate
+                        newEvent.eventDescription = object["description"] as? String
+                        newEvent.eventPhotoData = object["eventPhoto"] as? UIImage
                         self.eventsArray.append(newEvent)
                     }
                     self.tableView.reloadData()
@@ -71,10 +76,10 @@ class BucketTableViewController: UITableViewController {
         let event = eventsArray[indexPath.row] as Event
         cell.eventNameLabel.text = event.eventName
 
-        let dateString = event.convertEventDateFormatter(event.start)
+        let dateString = event.convertEventDateFormatter(event.start!)
         cell.eventDateLabel.text = dateString
         
-        let timeString = event.convertEventTimeFormatter(event.start)
+        let timeString = event.convertEventTimeFormatter(event.start!)
         cell.eventTimeLabel.text = timeString
         
         cell.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)

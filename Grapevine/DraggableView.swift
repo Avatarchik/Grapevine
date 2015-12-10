@@ -11,6 +11,8 @@
 
 import Foundation
 import UIKit
+import Parse
+import ParseUI
 
 let ACTION_MARGIN: Float = 120      //%%% distance from center where the action applies. Higher = swipe further in order for the action to be called
 let SCALE_STRENGTH: Float = 4       //%%% how quickly the card shrinks. Higher = slower shrinking
@@ -29,6 +31,7 @@ class DraggableView: UIView {
     var panGestureRecognizer: UIPanGestureRecognizer!
     var originPoint: CGPoint!
     var overlayView: OverlayView!
+    var eventPhotoView: UIImageView!
     var eventName: UILabel!
     var eventDate: UILabel!
     var eventStart: UILabel!
@@ -44,24 +47,25 @@ class DraggableView: UIView {
         
         self.setupView()
         
-        eventName = UILabel(frame: CGRectMake(0, 70, self.frame.size.width, 100))
+        eventPhotoView = UIImageView(frame: CGRectMake(0, 0, 100, 100))
+        eventPhotoView.image = UIImage(named: "app_logo")
+        
+        eventName = UILabel(frame: CGRectMake(0, 300, self.frame.size.width, 100))
         eventName.text = "no event name given"
-        eventName.textAlignment = NSTextAlignment.Center
         eventName.textColor = UIColor.blackColor()
         
-        eventDate = UILabel(frame: CGRectMake(0, 90, self.frame.size.width, 100))
+        eventDate = UILabel(frame: CGRectMake(0, 320, self.frame.size.width, 100))
         eventDate.text = "no event date given"
-        eventDate.textAlignment = NSTextAlignment.Center
         eventDate.textColor = UIColor.blackColor()
         
-        eventStart = UILabel(frame: CGRectMake(0, 110, self.frame.size.width, 100))
+        eventStart = UILabel(frame: CGRectMake(0, 340, self.frame.size.width, 100))
         eventStart.text = "no event start time given"
-        eventStart.textAlignment = NSTextAlignment.Center
         eventStart.textColor = UIColor.blackColor()
         
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "beingDragged:")
         
         self.addGestureRecognizer(panGestureRecognizer)
+        self.addSubview(eventPhotoView)
         self.addSubview(eventName)
         self.addSubview(eventDate)
         self.addSubview(eventStart)

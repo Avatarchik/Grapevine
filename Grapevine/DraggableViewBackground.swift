@@ -11,9 +11,11 @@
 
 import Foundation
 import UIKit
+import Parse
 
 class DraggableViewBackground: UIView, DraggableViewDelegate {
-    var eventCards: [[String]]!
+    
+    var eventsArray: [Event] = [Event]()
     var allCards: [DraggableView]!
     
     let MAX_BUFFER_SIZE = 2
@@ -27,6 +29,9 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     var checkButton: UIButton!
     var xButton: UIButton!
     
+    var eventDateFormatter = NSDateFormatter()
+    var eventTimeFormatter = NSDateFormatter()
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -35,23 +40,29 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         super.init(frame: frame)
         super.layoutSubviews()
         self.setupView()
-        eventCards = [["event 1", "event 1 date", "event 1 start"],
-                      ["event 2", "event 2 date", "event 2 start"],
-                      ["event 3", "event 3 date", "event 3 start"]]
+        
+        eventDateFormatter.dateFormat = "MMMM d"
+        eventTimeFormatter.dateFormat = "h:mma"
         allCards = []
         loadedCards = []
         cardsLoadedIndex = 0
-        self.loadCards()
+        getAllEvents()
+//        eventCards = [["event 1", "event 1 date", "event 1 start"],
+//                      ["event 2", "event 2 date", "event 2 start"],
+//                      ["event 3", "event 3 date", "event 3 start"]]
+//        self.loadCards()
     }
     
     func setupView() -> Void {
         self.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
         
-        xButton = UIButton(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2 + 35, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
+//        xButton = UIButton(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2 + 50, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
+        xButton = UIButton(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2 + 100, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
         xButton.setImage(UIImage(named: "xButton"), forState: UIControlState.Normal)
         xButton.addTarget(self, action: "swipeLeft", forControlEvents: UIControlEvents.TouchUpInside)
         
-        checkButton = UIButton(frame: CGRectMake(self.frame.size.width/2 + CARD_WIDTH/2 - 85, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
+//        checkButton = UIButton(frame: CGRectMake(self.frame.size.width/2 + CARD_WIDTH/2 - 100, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
+        checkButton = UIButton(frame: CGRectMake(self.frame.size.width/2 + CARD_WIDTH/2 - 150, self.frame.size.height/2 + CARD_HEIGHT/2 + 10, 59, 59))
         checkButton.setImage(UIImage(named: "checkButton"), forState: UIControlState.Normal)
         checkButton.addTarget(self, action: "swipeRight", forControlEvents: UIControlEvents.TouchUpInside)
         
@@ -59,19 +70,59 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         self.addSubview(checkButton)
     }
     
+    func getAllEvents() {
+        let query = PFQuery(className:"Event")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects {
+                    for object in objects {
+                        let newEvent = Event()
+                        newEvent.objectID = object.objectId!
+                        newEvent.eventName = object["EventName"] as? String
+                        newEvent.start = object["start"] as? NSDate
+                        newEvent.location = object["location"] as? String
+//                        newEvent.eventPhoto = UIImage(object["eventPhoto"] as! NSData)
+                        
+                        let imageFile = object["eventPhoto"] as? PFFile
+                        imageFile!.getDataInBackgroundWithBlock {
+                            (imageData: NSData?, error: NSError?) -> Void in
+                            if error == nil {
+                                if let imageData = imageData {
+                                    newEvent.eventPhotoData = UIImage(data: imageData)!
+                                }
+                            } else {
+                                print("No image retrieved")
+                            }
+                        }
+                        self.eventsArray.append(newEvent)
+                    }
+                }
+                // Calling loadCards() here even though it should be called in init()
+                // this is because finding objects through a Parse query will not properly add objects to an array
+                self.loadCards()
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+    }
+    
     func createDraggableViewWithDataAtIndex(index: NSInteger) -> DraggableView {
         let draggableView = DraggableView(frame: CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT))
-        draggableView.eventName.text = eventCards[index][0]
-        draggableView.eventDate.text = eventCards[index][1]
-        draggableView.eventStart.text = eventCards[index][2]
+        draggableView.eventPhotoView.image = eventsArray[index].eventPhotoData
+        print(draggableView.eventPhotoView)
+        draggableView.eventName.text = eventsArray[index].eventName
+        draggableView.eventDate.text = eventDateFormatter.stringFromDate(eventsArray[index].start!)
+        draggableView.eventStart.text = eventTimeFormatter.stringFromDate(eventsArray[index].start!).lowercaseString
         draggableView.delegate = self
         return draggableView
     }
     
     func loadCards() -> Void {
-        if eventCards.count > 0 {
-            let numLoadedCardsCap = eventCards.count > MAX_BUFFER_SIZE ? MAX_BUFFER_SIZE : eventCards.count
-            for var i = 0; i < eventCards.count; i++ {
+        if eventsArray.count > 0 {
+            let numLoadedCardsCap = eventsArray.count > MAX_BUFFER_SIZE ? MAX_BUFFER_SIZE : eventsArray.count
+            for var i = 0; i < eventsArray.count; i++ {
                 let newCard: DraggableView = self.createDraggableViewWithDataAtIndex(i)
                 allCards.append(newCard)
                 if i < numLoadedCardsCap {

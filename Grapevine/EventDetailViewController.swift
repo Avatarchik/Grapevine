@@ -12,8 +12,10 @@ import Parse
 
 class EventDetailViewController: UIViewController {
 
+    @IBOutlet weak var eventPhotoView: UIImageView!
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var hostedByLabel: UILabel!
+    @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -22,7 +24,9 @@ class EventDetailViewController: UIViewController {
     var savedEventId : String = ""
     var arrayIndex : Int = 0
     var eventsArray: [Event] = []
-    var dateFormatter = NSDateFormatter()
+
+    var eventDateFormatter = NSDateFormatter()
+    var eventTimeFormatter = NSDateFormatter()
     
     var detailItem: Event? {
         didSet {
@@ -40,14 +44,20 @@ class EventDetailViewController: UIViewController {
             if let hostedBy = self.hostedByLabel {
                 hostedBy.text = detail.hostedBy
             }
+            if let eventDate = self.eventDateLabel {
+                eventDate.text = eventDateFormatter.stringFromDate(detail.start!)
+            }
             if let start = self.startTimeLabel {
-                start.text = detail.start.description
+                start.text = eventTimeFormatter.stringFromDate(detail.start!).lowercaseString
             }
             if let location = self.locationLabel {
                 location.text = detail.location
             }
-            if let description = self.descriptionLabel {
-                description.text = detail.description
+            if let eventDescription = self.descriptionLabel {
+                eventDescription.text = detail.eventDescription
+            }
+            if let eventPhotoData = self.eventPhotoView {
+                eventPhotoData.image = detail.eventPhotoData
             }
         }
     }
@@ -55,12 +65,15 @@ class EventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.configureView()
         self.view.backgroundColor = UIColor(red: 0.92, green: 0.93, blue: 0.95, alpha: 1)
         addToCalButton.layer.cornerRadius = 5
         addToCalButton.backgroundColor = UIColor(red: 126.0/255.0, green: 67.0/255.0, blue: 150.0/255.5, alpha: 1.0)
-        // sets the display date format for the dateformatter, used for all dates with the stringFromDate method
-        dateFormatter.dateFormat = "MMM dd, yyyy h:mm a"
+        
+        eventDateFormatter.dateFormat = "MMMM d"
+        eventTimeFormatter.dateFormat = "h:mma"
+        
+        eventPhotoView.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
+        self.configureView()
         
 //        getEventsDataFromParse()
     }
