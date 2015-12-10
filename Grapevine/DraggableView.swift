@@ -48,7 +48,7 @@ class DraggableView: UIView {
         self.setupView()
         
         eventPhotoView = UIImageView(frame: CGRectMake(0, 70, self.frame.size.width, self.frame.size.width))
-        eventPhotoView.image = UIImage(named: "app_logo")
+        // eventPhotoView.image = UIImage(named: "app_logo")
         
         eventName = UILabel(frame: CGRectMake(5, self.frame.size.height-90, self.frame.size.width, 100))
         eventName.text = "no event name given"
