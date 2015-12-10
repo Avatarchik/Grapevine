@@ -294,6 +294,145 @@
             </objects>
             <point key="canvasLocation" x="1979.5" y="1096.5"/>
         </scene>
+        <!--Event Details-->
+        <scene sceneID="hiV-97-yj4">
+            <objects>
+                <viewController id="qGO-av-m3G" customClass="HostEventDetailsViewController" customModule="Grapevine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ivv-cA-9LB"/>
+                        <viewControllerLayoutGuide type="bottom" id="9CB-I6-heb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q8I-Xh-0Sv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-2h-EzK">
+                                <rect key="frame" x="20" y="447" width="335" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hosted By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvW-sZ-Bsa">
+                                <rect key="frame" x="20" y="476" width="335" height="23"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUO-Fk-24S">
+                                <rect key="frame" x="20" y="515" width="335" height="23"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDF-F7-XVf">
+                                <rect key="frame" x="20" y="496" width="92" height="23"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_bg" translatesAutoresizingMaskIntoConstraints="NO" id="3gp-oH-ic9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <animations/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iH6-7W-I32">
+                                <rect key="frame" x="20" y="537" width="335" height="72"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzk-Mo-AZM">
+                                <rect key="frame" x="120" y="496" width="75" height="23"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Event Details" id="BhY-zg-Lg3"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="descriptionView" destination="iH6-7W-I32" id="9iO-se-fl0"/>
+                        <outlet property="eventDateLabel" destination="FDF-F7-XVf" id="loT-81-J6V"/>
+                        <outlet property="eventNameLabel" destination="mnk-2h-EzK" id="6gb-gb-QSU"/>
+                        <outlet property="eventPhotoView" destination="3gp-oH-ic9" id="eBv-UZ-aUV"/>
+                        <outlet property="hostedByLabel" destination="DvW-sZ-Bsa" id="ulc-rs-dDw"/>
+                        <outlet property="locationLabel" destination="LUO-Fk-24S" id="r85-2w-zjz"/>
+                        <outlet property="startTimeLabel" destination="lzk-Mo-AZM" id="i5X-NR-Cdx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7c-pB-kXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1486.5" y="2750.5"/>
+        </scene>
+        <!--Hosting-->
+        <scene sceneID="Yaw-TI-chE">
+            <objects>
+                <tableViewController id="RlV-XO-Jmz" customClass="HostTableViewController" customModule="Grapevine" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9HR-81-Mn7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HostEventCell" id="Nns-ed-pvO" customClass="HostEventTableViewCell" customModule="Grapevine" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nns-ed-pvO" id="9Yk-aD-WPU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLO-S4-jvn">
+                                            <rect key="frame" x="8" y="11" width="228" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzW-08-3oM">
+                                            <rect key="frame" x="256" y="11" width="52" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyh-Jp-f5Y">
+                                            <rect key="frame" x="316" y="11" width="51" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="eventDateLabel" destination="zzW-08-3oM" id="kYP-Sy-QTA"/>
+                                    <outlet property="eventNameLabel" destination="CLO-S4-jvn" id="EP4-H3-Iv8"/>
+                                    <outlet property="eventTimeLabel" destination="Yyh-Jp-f5Y" id="lJ7-if-CTh"/>
+                                    <segue destination="qGO-av-m3G" kind="show" identifier="goToHostEventDetails" id="oju-tP-ZtQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RlV-XO-Jmz" id="5Ou-iK-7mK"/>
+                            <outlet property="delegate" destination="RlV-XO-Jmz" id="UCe-a8-kJO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Hosting" id="vce-M5-3gC"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YmV-Pv-aSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.5" y="2750.5"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="M32-QC-faH">
             <objects>
@@ -339,9 +478,12 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                <state key="normal" title="My Events">
+                                <state key="normal" title="Hosting Events">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="RlV-XO-Jmz" kind="show" id="DRW-bU-s9T"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlg-OY-q9I">
                                 <rect key="frame" x="43" y="276" width="289" height="31"/>
@@ -403,6 +545,12 @@
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FdO-sh-PHJ">
+                                        <rect key="frame" x="20" y="154" width="335" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IeU-mY-5FL">
                                         <rect key="frame" x="20" y="408" width="335" height="30"/>
                                         <animations/>
@@ -427,28 +575,6 @@
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYt-QJ-JSi">
-                                        <rect key="frame" x="20" y="192" width="335" height="179"/>
-                                        <animations/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                    </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FdO-sh-PHJ">
-                                        <rect key="frame" x="20" y="154" width="335" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOP-2Z-Kqt">
-                                        <rect key="frame" x="130" y="379" width="115" height="16"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                        <state key="normal" title="Add Event Photo">
-                                            <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addImageButtonTapped" destination="iqt-Yj-bpw" eventType="touchUpInside" id="YWp-CV-v5t"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCx-aT-7yu">
                                         <rect key="frame" x="43" y="582" width="289" height="30"/>
                                         <animations/>
@@ -459,6 +585,22 @@
                                         </state>
                                         <connections>
                                             <action selector="hostCreateEvent:" destination="iqt-Yj-bpw" eventType="touchUpInside" id="1IU-2h-KR0"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYt-QJ-JSi">
+                                        <rect key="frame" x="20" y="192" width="335" height="179"/>
+                                        <animations/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOP-2Z-Kqt">
+                                        <rect key="frame" x="130" y="379" width="115" height="16"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                        <state key="normal" title="Add Event Photo">
+                                            <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addImageButtonTapped" destination="iqt-Yj-bpw" eventType="touchUpInside" id="YWp-CV-v5t"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -27,10 +27,8 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
     let imagePicker = UIImagePickerController()
     var dateFormatter = NSDateFormatter()
     
-    let datePickerView = UIDatePicker()
-    
-
-
+    let startDatePickerView = UIDatePicker()
+    let endDatePickerView = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +50,10 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
         location.delegate = self
         descriptionField.delegate = self
         
-        datePickerView.datePickerMode = UIDatePickerMode.DateAndTime
-        startTextField.inputView = datePickerView
-        endTextField.inputView = datePickerView
+        startDatePickerView.datePickerMode = UIDatePickerMode.DateAndTime
+        startTextField.inputView = startDatePickerView
+        endDatePickerView.datePickerMode = UIDatePickerMode.DateAndTime
+        endTextField.inputView = endDatePickerView
         
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -141,15 +140,15 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func startTextFieldEditing(sender: UITextField) {
-        datePickerView.addTarget(self, action: Selector("startPickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        startDatePickerView.addTarget(self, action: Selector("startPickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     @IBAction func endTextFieldEditing(sender: UITextField) {
-        datePickerView.addTarget(self, action: Selector("endPickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        endDatePickerView.addTarget(self, action: Selector("endPickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     @IBAction func hostCreateEvent(sender: UIButton) {
-        // Create a parse object
+        // Create new Parse Event object
         let eventObject = PFObject(className: "Event")
         
         // all string attributes
@@ -161,7 +160,14 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
         // saving the photo file
         let photo = imageView.image!
         let eventImageData = UIImageJPEGRepresentation(photo, 0.5)
-        let file = PFFile(name: eventName.text! + "Photo.png", data: eventImageData!)
+//        var objectIdString = ""
+//        if let objectId = eventObject.objectId {
+//            objectIdString = objectId
+//        }
+//        else {
+//            print("Event does not have objectId")
+//        }
+        let file = PFFile(name: "eventphoto.png", data: eventImageData!)
         file!.saveInBackground()
         eventObject["eventPhoto"] = file
         
@@ -172,6 +178,14 @@ class AddEventViewController: UIViewController, UIImagePickerControllerDelegate,
         eventObject["end"] = endNSDate
         eventObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("New event object has been saved.")
+            let userHostEventObject = PFObject(className: "UserEvent")
+            userHostEventObject["category"] = "host"
+            userHostEventObject["eventID"] = eventObject.objectId
+            userHostEventObject["in_calendar"] = false
+            userHostEventObject["userID"] = "cTbNUaHHRV"
+            userHostEventObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                print("New user event object has been saved in user's host array.")
+            }
         }
         
         let alertController = UIAlertController(title: "Event has been posted!", message: "Your created event will be seen by Grapevine users.", preferredStyle: .Alert)
